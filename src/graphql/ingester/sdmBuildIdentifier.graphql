@@ -1,5 +1,5 @@
 type SdmBuildIdentifier @rootType {
-    repo(name: [String!], owner: [String!], providerId: [String!]): SdmBuildIdentifierRepository
+    repo(name: [String], owner: [String], providerId: [String]): SdmBuildIdentifierRepository
     identifier: String
 }
 
