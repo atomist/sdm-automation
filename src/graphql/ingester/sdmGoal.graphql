@@ -6,9 +6,9 @@ type SdmGoal @rootType {
     sha: String @compositeId
     branch: String @compositeId
 
-    repo(name: String!, owner: [String!], providerId: [String!]): SdmRepository
+    repo(name: [String], owner: [String], providerId: [String]): SdmRepository
 
-    fulfillment(name: [String!], method: [String!]): SdmGoalFulfillment
+    fulfillment(name: [String], method: [String]): SdmGoalFulfillment
 
     description: String
     url: String
@@ -22,7 +22,7 @@ type SdmGoal @rootType {
     retryFeasible: Boolean
 
     approval: SdmProvenance
-    approvelRequired: Boolean
+    approvalRequired: Boolean
 
     provenance: [SdmProvenance]
 
