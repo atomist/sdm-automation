@@ -8,5 +8,5 @@ type SdmVersion @rootType {
 type SdmVersionRepository {
     name: String
     owner: String
-    provider: String
+    providerId: String
 }
