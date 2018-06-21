@@ -17,6 +17,9 @@
 import { Configuration } from "@atomist/automation-client";
 import { ingester } from "@atomist/automation-client/graph/graphQL";
 
+/**
+ * Automation Client that registers the global SDM types
+ */
 export const configuration: Configuration = {
     ingesters: [
         ingester("sdmGoal"),
