@@ -6,5 +6,5 @@ type SdmBuildIdentifier @rootType {
 type SdmBuildIdentifierRepository {
     name: String @compositeId
     owner: String @compositeId
-    provider: String @compositeId
+    providerId: String @compositeId
 }
