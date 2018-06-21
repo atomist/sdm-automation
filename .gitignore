@@ -1,0 +1,8 @@
+/.idea
+/target
+/node_modules
+/build
+/git.properties
+/config/development.json
+git-info.json
+*.iml
