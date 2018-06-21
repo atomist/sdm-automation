@@ -15,7 +15,6 @@ WORKDIR /opt/app
 EXPOSE 2866
 
 ENV NPM_CONFIG_LOGLEVEL warn
-
 ENV SUPPRESS_NO_CONFIG_WARNING true
 
 ENTRYPOINT [ "dumb-init", "node", "--trace-warnings", "--expose_gc", "--optimize_for_size", "--always_compact", "--max_old_space_size=384" ]
