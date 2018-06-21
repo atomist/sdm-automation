@@ -1,0 +1,91 @@
+{
+  "name": "@atomist/sdm-automation",
+  "description": "Automation client to define the global SDM custom types",
+  "version": "0.1.0",
+  "author": "Atomist",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/atomist/sdm-automation.git"
+  },
+  "homepage": "https://github.com/atomist/sdm-automation#readme",
+  "bugs": {
+    "url": "https://github.com/atomist/sdm-automation/issues"
+  },
+  "keywords": [
+    "atomist",
+    "automation",
+    "sdm"
+  ],
+  "dependencies": {
+    "@atomist/automation-client": "0.17.4-20180621144910",
+    "@atomist/slack-messages": "^0.12.1",
+    "body-parser": "^1.18.2",
+    "cfenv": "^1.0.4",
+    "logzio-nodejs": "^0.4.10",
+    "stripchar": "^1.2.1",
+    "winston-logzio": "^1.0.6"
+  },
+  "devDependencies": {
+    "@types/app-root-path": "^1.2.4",
+    "@types/async": "2.0.47",
+    "@types/config": "0.0.33",
+    "@types/lodash": "^4.14.100",
+    "@types/mocha": "^2.2.48",
+    "@types/node": "^9.4.1",
+    "@types/power-assert": "^1.4.29",
+    "copyfiles": "^1.2.0",
+    "espower-typescript": "^8.1.3",
+    "graphql-code-generator": "^0.8.14",
+    "mocha": "^5.0.0",
+    "nodemon": "^1.14.12",
+    "npm-run-all": "^4.1.2",
+    "power-assert": "^1.4.4",
+    "prettier": "^1.10.2",
+    "rimraf": "^2.6.2",
+    "supervisor": "^0.12.0",
+    "ts-node": "^4.1.0",
+    "tslint": "^5.9.1",
+    "typedoc": "^0.10.0",
+    "typescript": "^2.9.2",
+    "typescript-formatter": "^7.0.1"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "autostart": "npm-run-all --print-label --parallel watch:compile watch",
+    "autotest": "supervisor --watch src,test --extensions ts --no-restart-on exit --quiet --exec npm -- test",
+    "build": "npm-run-all lint compile test",
+    "clean": "npm-run-all clean:js clean:build",
+    "clean:build": "rimraf *-v8.log profile.txt build",
+    "clean:dist": "npm-run-all clean clean:npm",
+    "clean:js": "rimraf \"{src,test}/**/*.js\"",
+    "clean:npm": "rimraf node_modules",
+    "compile": "npm-run-all git:info compile:gql compile:ts",
+    "compile:gql": "npm-run-all gql:gen gql:copy",
+    "compile:ts": "tsc --project .",
+    "debug": "node $NODE_DEBUG_OPTION build/src/start.client.js",
+    "fmt": "npm-run-all fmt:ts fmt:gql",
+    "fmt:ts": "tsfmt --replace",
+    "fmt:gql": "prettier --write \"**/*.graphql\"",
+    "git:info": "atomist git",
+    "gql:copy": "copyfiles \"src/**/*.graphql\" build",
+    "gql:gen": "atomist gql-gen \"./graphql/**/*.graphql\"",
+    "lint": "npm-run-all lint:ts",
+    "lint:ts": "tslint --format verbose --project . --exclude \"{build,node_modules}/**\" \"**/*.ts\"",
+    "lint:gql": "prettier --list-different \"src/**/*.graphql\"",
+    "lint:fix": "npm-run-all lint:ts:fix",
+    "lint:ts:fix": "npm run lint:ts -- --fix",
+    "start": "atomist start --no-install --no-compile",
+    "test": "mocha --require espower-typescript/guess \"test/**/*.ts\"",
+    "test:one": "mocha --require espower-typescript/guess \"test/**/${TEST:-*.ts}\"",
+    "typedoc": "typedoc --mode modules --excludeExternals --out build/typedoc src",
+    "watch:compile": "tsc --project . --watch",
+    "watch": "supervisor --watch build --quiet --exec npm -- run start"
+  },
+  "engines": {
+    "node": "9.x.x",
+    "npm": "5.x.x"
+  }
+}
