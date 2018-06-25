@@ -15,7 +15,7 @@ type SdmGoal @rootType {
     externalUrl: String
     goalSet: String
     goalSetId: String
-    state: String
+    state: SdmGoalState
     ts: Int @compositeId
 
     error: String

@@ -1,5 +1,5 @@
 type SdmDeployEnablement @rootType {
-    state: String
+    state: SdmDeployState
     owner: String @compositeId
     repo: String @compositeId
     providerId: String @compositeId
