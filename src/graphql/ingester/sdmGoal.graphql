@@ -1,22 +1,22 @@
 type SdmGoal @rootType {
-    environment: String @compositeId
-    name: String @compositeId
-    uniqueName: String
+    environment: String! @compositeId
+    name: String! @compositeId
+    uniqueName: String!
 
-    sha: String @compositeId
-    branch: String @compositeId
+    sha: String! @compositeId
+    branch: String! @compositeId
 
-    repo(name: [String], owner: [String], providerId: [String]): SdmRepository
+    repo(name: [String], owner: [String], providerId: [String]): SdmRepository!
 
-    fulfillment(name: [String], method: [String]): SdmGoalFulfillment
+    fulfillment(name: [String], method: [String]): SdmGoalFulfillment!
 
     description: String
     url: String
     externalUrl: String
-    goalSet: String
-    goalSetId: String
-    state: SdmGoalState
-    ts: Int @compositeId
+    goalSet: String!
+    goalSetId: String!
+    state: SdmGoalState!
+    ts: Int! @compositeId
 
     error: String
     retryFeasible: Boolean
