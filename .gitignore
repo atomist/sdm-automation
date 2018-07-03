@@ -6,3 +6,4 @@
 /config/development.json
 git-info.json
 *.iml
+log/
