@@ -1,6 +1,6 @@
 # @atomist/sdm-automation
 
-tba
+Automation registering the global ingesters for SdmGoal etc.
 
 ## Support
 
