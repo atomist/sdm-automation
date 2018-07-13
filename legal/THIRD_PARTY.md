@@ -8,19 +8,19 @@ This page details all runtime OSS dependencies of `@atomist/sdm-automation`.
 
 | License | Count |
 |---------|-------|
-|AFLv2.1|1|
-|Apache-2.0|13|
-|Apache|1|
-|BSD-2-Clause|8|
-|BSD-3-Clause|17|
-|BSD|5|
-|Custom: https://github.com/douglascrockford/JSON-js|1|
-|GPL-3.0|4|
-|ISC|37|
-|MIT|454|
-|Public Domain|1|
-|UNKNOWN|1|
-|Unlicense|2|
+|[AFLv2.1](#aflv21)|1|
+|[Apache-2.0](#apache-20)|13|
+|[Apache](#apache)|1|
+|[BSD-2-Clause](#bsd-2-clause)|8|
+|[BSD-3-Clause](#bsd-3-clause)|17|
+|[BSD](#bsd)|5|
+|[Custom: https://github.com/douglascrockford/JSON-js](#custom-httpsgithubcomdouglascrockfordjson-js)|1|
+|[GPL-3.0](#gpl-30)|4|
+|[ISC](#isc)|37|
+|[MIT](#mit)|454|
+|[Public Domain](#public-domain)|1|
+|[UNKNOWN](#unknown)|1|
+|[Unlicense](#unlicense)|2|
 
 #### AFLv2.1
 
