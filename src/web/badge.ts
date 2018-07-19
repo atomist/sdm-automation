@@ -42,7 +42,7 @@ export async function configureBadgeRoute(config: Configuration): Promise<Config
             const graphClient = new ApolloGraphClient(
                 `${config.endpoints.graphql}/${team}`,
                 // tslint:disable:max-line-length
-                { Authorization: `Bearer ${((automationClientInstance().webSocketHandler as any).registration as RegistrationConfirmation).jwt}`});
+                { Authorization: `Bearer ${((automationClientInstance().webSocketHandler as any).registration as RegistrationConfirmation).jwt}` });
 
             const badge = await graphClient.query<SdmGoalSetBadge.Query, SdmGoalSetBadge.Variables>({
                 name: "sdmGoalSetBadge",
@@ -112,7 +112,7 @@ export async function configureBadgeRoute(config: Configuration): Promise<Config
                     };
 
                     ghPages(format, svg => {
-                        res.writeHead(200, {"Content-Type": "image/svg+xml"});
+                        res.writeHead(200, { "Content-Type": "image/svg+xml", "Cache-Control": "no-cache" });
                         res.write(svg);
                         res.end();
                     });
