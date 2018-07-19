@@ -103,7 +103,7 @@ export async function configureBadgeRoute(config: Configuration): Promise<Config
 
                     // tslint:disable:max-line-length
                     const fu =
-                        `https://img.shields.io/badge/${goalSetName.toLowerCase().split("-").join("--")}-${state}-${color}.svg?link=https://atomist.com&logo=${Logo}`;
+                        `https://img.shields.io/badge/${goalSetName.toLowerCase().split("-").join("--")}-${state}-${color}.svg?link=https://atomist.com`;
                     res.status(302).redirect(fu);
                     return next();
                 }
