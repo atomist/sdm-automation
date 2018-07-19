@@ -101,7 +101,7 @@ export async function configureBadgeRoute(config: Configuration): Promise<Config
                         color = "brightgreen";
                     }
 
-                    const ghPages = require("gh-badges")
+                    const ghPages = require("gh-badges");
 
                     const format = {
                         text: [goalSetName.toLowerCase(), state],
@@ -109,10 +109,10 @@ export async function configureBadgeRoute(config: Configuration): Promise<Config
                         template: "flat",
                         logo: Logo,
                         logoPadding: 10,
-                    }
+                    };
 
                     ghPages(format, svg => {
-                        res.writeHead(200, {"Content-Type": "image/svg+xml"})
+                        res.writeHead(200, {"Content-Type": "image/svg+xml"});
                         res.write(svg);
                         res.end();
                     });
