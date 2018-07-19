@@ -1,0 +1,8 @@
+query SdmGoals($goalSetId: [String!]){
+  SdmGoal(_orderBy: "ts", _first: 100, goalSetId: $goalSetId) {
+    ts
+    state
+    name
+    environment
+  }
+}

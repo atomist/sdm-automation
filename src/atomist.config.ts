@@ -16,6 +16,7 @@
 
 import { Configuration } from "@atomist/automation-client";
 import { ingester } from "@atomist/automation-client/graph/graphQL";
+import { configureBadgeRoute } from "./web/badge";
 
 /**
  * Automation Client that registers the global SDM types
@@ -26,5 +27,9 @@ export const configuration: Configuration = {
         ingester("sdmBuildIdentifier"),
         ingester("sdmDeployEnablement"),
         ingester("sdmVersion"),
+        ingester("sdmGoalSetBadge"),
+    ],
+    postProcessors: [
+        configureBadgeRoute,
     ],
 };

@@ -1,0 +1,10 @@
+query SdmGoalSet($owner: [String!], $repo: [String!], $providerId: [String!]){
+  SdmGoal(_orderBy: "ts", _first: 1) {
+    goalSetId
+    repo(name: $repo, owner: $owner, providerId: $providerId) @required {
+      name
+      owner
+      providerId
+    }
+  }
+}

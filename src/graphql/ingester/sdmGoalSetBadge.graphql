@@ -1,0 +1,11 @@
+type SdmGoalSetBadge @rootType {
+    repo(name: [String], owner: [String], providerId: [String]): SdmGoalSetBadgeRepository
+    sdm: String
+    token: String
+}
+
+type SdmGoalSetBadgeRepository {
+    name: String
+    owner: String
+    providerId: String
+}

@@ -1,0 +1,11 @@
+query SdmGoalSetBadge($token: [String!]) {
+  SdmGoalSetBadge(token: $token) {
+    sdm
+    repo {
+      name
+      owner
+      providerId
+    }
+  }
+}
+
