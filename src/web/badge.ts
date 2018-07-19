@@ -101,10 +101,22 @@ export async function configureBadgeRoute(config: Configuration): Promise<Config
                         color = "brightgreen";
                     }
 
-                    // tslint:disable:max-line-length
-                    const fu =
-                        `https://img.shields.io/badge/${goalSetName.toLowerCase().split("-").join("--")}-${state}-${color}.svg?link=https://atomist.com`;
-                    res.status(302).redirect(fu);
+                    const ghPages = require("gh-badges")
+
+                    const format = {
+                        text: [goalSetName.toLowerCase(), state],
+                        colorscheme: color,
+                        template: "flat",
+                        logo: Logo,
+                        logoPadding: 10,
+                    }
+
+                    ghPages(format, svg => {
+                        res.writeHead(200, {"Content-Type": "image/svg+xml"})
+                        res.write(svg);
+                        res.end();
+                    });
+
                     return next();
                 }
                 res.sendStatus(404);
