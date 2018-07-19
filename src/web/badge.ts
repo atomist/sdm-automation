@@ -64,6 +64,7 @@ export async function configureBadgeRoute(config: Configuration): Promise<Config
 
                 if (goalSet && goalSet.SdmGoal && goalSet.SdmGoal.length > 0) {
                     const goalSetId = goalSet.SdmGoal[0].goalSetId;
+                    const goalSetName = goalSet.SdmGoal[0].goalSet;
                     const goals = (await graphClient.query<SdmGoals.Query, SdmGoals.Variables>({
                         name: "sdmGoals",
                         variables: {
@@ -100,8 +101,9 @@ export async function configureBadgeRoute(config: Configuration): Promise<Config
                         color = "brightgreen";
                     }
 
+                    // tslint:disable:max-line-length
                     const fu =
-                        `https://img.shields.io/badge/goals-${state}-${color}.svg?link=https://atomist.com&logo=${Logo}`;
+                        `https://img.shields.io/badge/${goalSetName.toLowerCase().split("-").join("--")}-${state}-${color}.svg?link=https://atomist.com&logo=${Logo}`;
                     res.status(302).redirect(fu);
                     return next();
                 }

@@ -4674,6 +4674,7 @@ export namespace SdmGoalSet {
 
   export type SdmGoal = {
     goalSetId?: string | null; 
+    goalSet?: string | null; 
     repo?: Repo | null; 
   } 
 
