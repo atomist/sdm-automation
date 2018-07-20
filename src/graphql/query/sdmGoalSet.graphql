@@ -1,5 +1,5 @@
-query SdmGoalSet($owner: [String!], $repo: [String!], $providerId: [String!]){
-  SdmGoal(_orderBy: "ts", _first: 1) {
+query SdmGoalSet($owner: [String!], $repo: [String!], $providerId: [String!], $branch: [String]){
+  SdmGoal(_orderBy: "ts", _first: 1, branch: $branch) {
     goalSetId
     goalSet
     repo(name: $repo, owner: $owner, providerId: $providerId) @required {

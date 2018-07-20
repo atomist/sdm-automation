@@ -5296,6 +5296,7 @@ export enum SdmDeployState {
 export namespace SdmGoals {
   export type Variables = {
     goalSetId?: string[] | null;
+    branch?: string[] | null;
   };
 
   export type Query = {
@@ -5316,6 +5317,7 @@ export namespace SdmGoalSet {
     owner?: string[] | null;
     repo?: string[] | null;
     providerId?: string[] | null;
+    branch?: string[] | null;
   };
 
   export type Query = {

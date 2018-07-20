@@ -67,7 +67,7 @@
     "compile": "npm-run-all git:info compile:gql compile:ts",
     "compile:gql": "npm-run-all gql:gen gql:copy",
     "compile:ts": "tsc --project .",
-    "debug": "node $NODE_DEBUG_OPTION build/src/start.client.js",
+    "debug": "node --inspect node_modules/@atomist/automation-client/start.client.js",
     "fmt": "npm-run-all fmt:ts fmt:gql",
     "fmt:ts": "tsfmt --replace",
     "fmt:gql": "prettier --write \"**/*.graphql\"",
