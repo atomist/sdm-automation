@@ -32,6 +32,7 @@ import {
     SdmGoalSetBadge,
 } from "../typings/types";
 
+// tslint:disable:no-var-requires
 const ghPages = require("gh-badges");
 
 // tslint:disable:max-line-length
@@ -154,5 +155,5 @@ function badgeRequestHandler(config: Configuration) {
             logger.info(`No badge for '${owner}/${repo}/${branch}' with token '${token}' sent`);
             return next();
         }
-    }
+    };
 }
