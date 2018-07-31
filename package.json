@@ -18,7 +18,7 @@
     "sdm"
   ],
   "dependencies": {
-    "@atomist/automation-client": "0.17.4-20180621144910",
+    "@atomist/automation-client": "0.19.0-20180731181755",
     "@atomist/slack-messages": "^0.12.1",
     "body-parser": "^1.18.2",
     "cfenv": "^1.0.4",
