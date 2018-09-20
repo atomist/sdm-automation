@@ -80,5 +80,7 @@ enum SdmGoalState {
     approved
     success
     failure
+    canceled
+    stopped
     skipped
 }
