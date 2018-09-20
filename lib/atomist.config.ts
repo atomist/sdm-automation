@@ -15,7 +15,7 @@
  */
 
 import { Configuration } from "@atomist/automation-client";
-import { ingester } from "@atomist/automation-client/graph/graphQL";
+import { GraphQL } from "@atomist/automation-client";
 import { configureBadgeRoute } from "./web/badge";
 
 /**
@@ -23,11 +23,11 @@ import { configureBadgeRoute } from "./web/badge";
  */
 export const configuration: Configuration = {
     ingesters: [
-        ingester("sdmGoal"),
-        ingester("sdmBuildIdentifier"),
-        ingester("sdmDeployEnablement"),
-        ingester("sdmVersion"),
-        ingester("sdmGoalSetBadge"),
+        GraphQL.ingester("sdmGoal"),
+        GraphQL.ingester("sdmBuildIdentifier"),
+        GraphQL.ingester("sdmDeployEnablement"),
+        GraphQL.ingester("sdmVersion"),
+        GraphQL.ingester("sdmGoalSetBadge"),
     ],
     postProcessors: [
         configureBadgeRoute,

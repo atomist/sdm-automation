@@ -15,15 +15,13 @@
  */
 
 import {
+    ApolloGraphClient,
     automationClientInstance,
     Configuration,
     logger,
-} from "@atomist/automation-client";
-import { ApolloGraphClient } from "@atomist/automation-client/graph/ApolloGraphClient";
-import {
+    QueryNoCacheOptions,
     RegistrationConfirmation,
-} from "@atomist/automation-client/internal/transport/websocket/WebSocketRequestProcessor";
-import { QueryNoCacheOptions } from "@atomist/automation-client/spi/graph/GraphClient";
+} from "@atomist/automation-client";
 import * as exp from "express";
 import * as _ from "lodash";
 import {
