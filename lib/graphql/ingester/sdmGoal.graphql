@@ -25,6 +25,9 @@ type SdmGoal @rootType {
     approval: SdmProvenance
     approvalRequired: Boolean
 
+    preApproval: SdmProvenance
+    preApprovalRequired: Boolean
+
     provenance: [SdmProvenance]
 
     preConditions: [SdmCondition]
@@ -74,6 +77,8 @@ type SdmCondition {
 
 enum SdmGoalState {
     planned
+    waiting_for_pre_approval
+    pre_approved
     requested
     in_process
     waiting_for_approval
