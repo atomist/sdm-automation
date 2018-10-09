@@ -8,7 +8,7 @@ type SdmGoalSet @rootType {
     goalSetId: String @compositeId
     ts: Int
 
-    goals: [String]
+    goals: [SdmGoalName]
 
     push: Push
         @linkTo(
@@ -20,4 +20,9 @@ type SdmGoalSet @rootType {
             query: "query goalSets($sha: String!, $branch: String!) {SdmGoalSet(sha: [$sha], branch: [$branch], _first: 500){id}}",
             variables: [{name: "sha", path: "$.after.sha"}, {name: "branch", path: "$.branch"}]
         )
+}
+
+type SdmGoalName {
+    name: String
+    uniqueName: String
 }
