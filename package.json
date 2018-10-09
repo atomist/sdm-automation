@@ -1,7 +1,7 @@
 {
   "name": "@atomist/sdm-automation",
   "description": "Automation client to define the global SDM custom types",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "author": "Atomist",
   "license": "Apache-2.0",
   "repository": {
