@@ -10,6 +10,8 @@ type SdmGoalSet @rootType {
 
     goals: [SdmGoalName]
 
+    provenance: SdmProvenance
+
     push: Push
         @linkTo(
             queryName: "pushBySha",
