@@ -1,0 +1,23 @@
+type SdmGoalSet @rootType {
+    sha: String
+    branch: String
+
+    repo(name: [String], owner: [String], providerId: [String]): SdmRepository
+
+    name: String
+    goalSetId: String @compositeId
+    ts: Int
+
+    goals: [String]
+
+    push: Push
+        @linkTo(
+            queryName: "pushBySha",
+            variables: [{name: "afterSha", path: "$.sha"}, {name: "branchName", path: "$.branch"}]
+        )
+        @linkFrom(
+            field: {kind: LIST, name: "goalSets"},
+            query: "query goalSets($sha: String!, $branch: String!) {SdmGoalSet(sha: [$sha], branch: [$branch], _first: 500){id}}",
+            variables: [{name: "sha", path: "$.after.sha"}, {name: "branch", path: "$.branch"}]
+        )
+}

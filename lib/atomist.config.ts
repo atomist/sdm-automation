@@ -24,6 +24,7 @@ import { configureBadgeRoute } from "./web/badge";
 export const configuration: Configuration = {
     ingesters: [
         GraphQL.ingester("sdmGoal"),
+        GraphQL.ingester("sdmGoalSet"),
         GraphQL.ingester("sdmBuildIdentifier"),
         GraphQL.ingester("sdmDeployEnablement"),
         GraphQL.ingester("sdmVersion"),
