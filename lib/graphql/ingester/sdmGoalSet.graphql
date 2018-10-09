@@ -4,7 +4,7 @@ type SdmGoalSet @rootType {
 
     repo(name: [String], owner: [String], providerId: [String]): SdmRepository
 
-    name: String
+    goalSet: String
     goalSetId: String @compositeId
     ts: Int
 
