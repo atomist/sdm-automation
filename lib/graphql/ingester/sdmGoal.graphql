@@ -1,7 +1,7 @@
 type SdmGoal @rootType {
     environment: String @compositeId
-    name: String @compositeId
-    uniqueName: String
+    name: String
+    uniqueName: String @compositeId
 
     sha: String @compositeId
     branch: String @compositeId
