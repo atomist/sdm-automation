@@ -7,7 +7,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][]
 
-[Unreleased]: https://github.com/atomist/automation-client-sidecar-ts/compare/0.1.12...HEAD
+[Unreleased]: https://github.com/atomist/automation-client-sidecar-ts/compare/0.1.13...HEAD
+
+## [0.1.13][] - 2018-10-17
+
+[0.1.13]: https://github.com/atomist/automation-client-sidecar-ts/compare/0.1.12...0.1.13
 
 ## [0.1.12][] - 2018-10-09
 
