@@ -73,6 +73,7 @@ type SdmProvenance {
 type SdmCondition {
     environment: String
     name: String
+    uniqueName: String
 }
 
 enum SdmGoalState {
