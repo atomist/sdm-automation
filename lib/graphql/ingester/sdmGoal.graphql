@@ -3,8 +3,8 @@ type SdmGoal @rootType {
     name: String
     uniqueName: String @compositeId
 
-    sha: String @compositeId
-    branch: String @compositeId
+    sha: String
+    branch: String
 
     repo(name: [String], owner: [String], providerId: [String]): SdmRepository
 
@@ -14,11 +14,12 @@ type SdmGoal @rootType {
     url: String
     externalUrl: String
     goalSet: String
-    goalSetId: String
-    state: SdmGoalState
-    phase: String
+    goalSetId: String @compositeId
+    state: SdmGoalState @compositeId
+    phase: String @compositeId
     ts: Int @compositeId
-
+    version: Int @compositeId
+    
     error: String
     retryFeasible: Boolean
 
