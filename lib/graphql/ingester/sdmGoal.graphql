@@ -12,7 +12,8 @@ type SdmGoal @rootType {
 
     description: String
     url: String
-    externalUrl: String
+    externalUrl: String # deprecated, use externalUrls
+    externalUrls: [SdmExternalUrl]
     goalSet: String
     goalSetId: String @compositeId
     state: SdmGoalState @compositeId
@@ -47,6 +48,11 @@ type SdmGoal @rootType {
             query: "query goals($sha: String!, $branch: String!) {SdmGoal(sha: [$sha], branch: [$branch], _first: 500){id}}",
             variables: [{name: "sha", path: "$.after.sha"}, {name: "branch", path: "$.branch"}]
         )
+}
+
+type SdmExternalUrl {
+    label: String
+    url: String
 }
 
 type SdmRepository {
