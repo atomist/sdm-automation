@@ -6,7 +6,7 @@ type SdmGoal @rootType {
   sha: String
   branch: String
 
-  repo: SdmRepository
+  repo(name: [String], owner: [String], providerId: [String]): SdmRepository
 
   fulfillment(name: [String], method: [String]): SdmGoalFulfillment
 
