@@ -17,7 +17,7 @@ type SdmGoalDisplay @rootType {
     )
     @linkFrom(
       field: { kind: LIST, name: "goalsDisplayState" }
-      query: "query goals($sha: String!, $branch: String!) {SdmGoal(sha: [$sha], branch: [$branch], _first: 500){id}}"
+      query: "query goals($sha: String!, $branch: String!) {SdmGoalDisplay(sha: [$sha], branch: [$branch], _first: 500){id}}"
       variables: [
         { name: "sha", path: "$.after.sha" }
         { name: "branch", path: "$.branch" }
