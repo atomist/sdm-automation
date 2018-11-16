@@ -1,30 +1,36 @@
 type SdmGoalSet @rootType {
-    sha: String
-    branch: String
+  sha: String
+  branch: String
 
-    repo(name: [String], owner: [String], providerId: [String]): SdmRepository
+  repo(name: [String], owner: [String], providerId: [String]): SdmRepository
 
-    goalSet: String
-    goalSetId: String @compositeId
-    ts: Int
+  goalSet: String
+  goalSetId: String @compositeId
+  ts: Int
 
-    goals: [SdmGoalName]
+  goals: [SdmGoalName]
 
-    provenance: SdmProvenance
+  provenance: SdmProvenance
 
-    push: Push
-        @linkTo(
-            queryName: "pushBySha",
-            variables: [{name: "afterSha", path: "$.sha"}, {name: "branchName", path: "$.branch"}]
-        )
-        @linkFrom(
-            field: {kind: LIST, name: "goalSets"},
-            query: "query goalSets($sha: String!, $branch: String!) {SdmGoalSet(sha: [$sha], branch: [$branch], _first: 500){id}}",
-            variables: [{name: "sha", path: "$.after.sha"}, {name: "branch", path: "$.branch"}]
-        )
+  push: Push
+    @linkTo(
+      queryName: "pushBySha"
+      variables: [
+        { name: "afterSha", path: "$.sha" }
+        { name: "branchName", path: "$.branch" }
+      ]
+    )
+    @linkFrom(
+      field: { kind: LIST, name: "goalSets" }
+      query: "query goalSets($sha: String!, $branch: String!) {SdmGoalSet(sha: [$sha], branch: [$branch], _first: 500){id}}"
+      variables: [
+        { name: "sha", path: "$.after.sha" }
+        { name: "branch", path: "$.branch" }
+      ]
+    )
 }
 
 type SdmGoalName {
-    name: String
-    uniqueName: String
+  name: String
+  uniqueName: String
 }

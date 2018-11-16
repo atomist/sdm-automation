@@ -1,99 +1,105 @@
 type SdmGoal @rootType {
-    environment: String @compositeId
-    name: String
-    uniqueName: String @compositeId
+  environment: String @compositeId
+  name: String
+  uniqueName: String @compositeId
 
-    sha: String
-    branch: String
+  sha: String
+  branch: String
 
-    repo(name: [String], owner: [String], providerId: [String]): SdmRepository
+  repo: SdmRepository
 
-    fulfillment(name: [String], method: [String]): SdmGoalFulfillment
+  fulfillment(name: [String], method: [String]): SdmGoalFulfillment
 
-    description: String
-    url: String
-    externalUrl: String # deprecated, use externalUrls
-    externalUrls: [SdmExternalUrl]
-    goalSet: String
-    goalSetId: String @compositeId
-    state: SdmGoalState @compositeId
-    phase: String @compositeId
-    ts: Int @compositeId
-    version: Int @compositeId
-    
-    error: String
-    retryFeasible: Boolean
+  description: String
+  url: String
+  externalUrl: String # deprecated, use externalUrls
+  externalUrls: [SdmExternalUrl]
+  goalSet: String
+  goalSetId: String @compositeId
+  state: SdmGoalState @compositeId
+  phase: String @compositeId
+  ts: Int @compositeId
+  version: Int @compositeId
 
-    approval: SdmProvenance
-    approvalRequired: Boolean
+  error: String
+  retryFeasible: Boolean
 
-    preApproval: SdmProvenance
-    preApprovalRequired: Boolean
+  approval: SdmProvenance
+  approvalRequired: Boolean
 
-    provenance: [SdmProvenance]
+  preApproval: SdmProvenance
+  preApprovalRequired: Boolean
 
-    preConditions: [SdmCondition]
+  provenance: [SdmProvenance]
 
-    externalKey: String
+  preConditions: [SdmCondition]
 
-    data: String
+  externalKey: String
 
-    push: Push
-        @linkTo(
-            queryName: "pushBySha",
-            variables: [{name: "afterSha", path: "$.sha"}, {name: "branchName", path: "$.branch"}]
-        )
-        @linkFrom(
-            field: {kind: LIST, name: "goals"},
-            query: "query goals($sha: String!, $branch: String!) {SdmGoal(sha: [$sha], branch: [$branch], _first: 500){id}}",
-            variables: [{name: "sha", path: "$.after.sha"}, {name: "branch", path: "$.branch"}]
-        )
+  data: String
+
+  push: Push
+    @linkTo(
+      queryName: "pushBySha"
+      variables: [
+        { name: "afterSha", path: "$.sha" }
+        { name: "branchName", path: "$.branch" }
+      ]
+    )
+    @linkFrom(
+      field: { kind: LIST, name: "goals" }
+      query: "query goals($sha: String!, $branch: String!) {SdmGoal(sha: [$sha], branch: [$branch], _first: 500){id}}"
+      variables: [
+        { name: "sha", path: "$.after.sha" }
+        { name: "branch", path: "$.branch" }
+      ]
+    )
 }
 
 type SdmExternalUrl {
-    label: String
-    url: String
+  label: String
+  url: String
 }
 
 type SdmRepository {
-    name: String
-    owner: String
-    providerId: String
+  name: String
+  owner: String
+  providerId: String
 }
 
 type SdmGoalFulfillment {
-    method: String
-    name: String
+  method: String
+  name: String
 }
 
 type SdmProvenance {
-    correlationId: String
-    registration: String
-    version: String
-    name: String
-    ts: Int
+  correlationId: String
+  registration: String
+  version: String
+  name: String
+  ts: Int
 
-    userId: String
-    channelId: String
+  userId: String
+  channelId: String
 }
 
 type SdmCondition {
-    environment: String
-    name: String
-    uniqueName: String
+  environment: String
+  name: String
+  uniqueName: String
 }
 
 enum SdmGoalState {
-    planned
-    waiting_for_pre_approval
-    pre_approved
-    requested
-    in_process
-    waiting_for_approval
-    approved
-    success
-    failure
-    canceled
-    stopped
-    skipped
+  planned
+  waiting_for_pre_approval
+  pre_approved
+  requested
+  in_process
+  waiting_for_approval
+  approved
+  success
+  failure
+  canceled
+  stopped
+  skipped
 }

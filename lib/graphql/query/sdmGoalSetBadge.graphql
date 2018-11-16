@@ -8,4 +8,3 @@ query SdmGoalSetBadge($token: [String!]) {
     }
   }
 }
-

@@ -1,4 +1,9 @@
-query SdmGoalSet($owner: [String!], $repo: [String!], $providerId: [String!], $branch: [String]){
+query SdmGoalSet(
+  $owner: [String!]
+  $repo: [String!]
+  $providerId: [String!]
+  $branch: [String]
+) {
   SdmGoal(_orderBy: "ts", _first: 1, branch: $branch) {
     goalSetId
     goalSet

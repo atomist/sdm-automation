@@ -1,0 +1,31 @@
+type SdmGoalDisplay @rootType {
+  sha: String @compositeId
+  branch: String @compositeId
+  repo: SdmRepository
+
+  ts: Int
+
+  state: SdmGoalDisplayState
+
+  push: Push
+    @linkTo(
+      queryName: "pushBySha"
+      variables: [
+        { name: "afterSha", path: "$.sha" }
+        { name: "branchName", path: "$.branch" }
+      ]
+    )
+    @linkFrom(
+      field: { kind: LIST, name: "goalsDisplayState" }
+      query: "query goals($sha: String!, $branch: String!) {SdmGoal(sha: [$sha], branch: [$branch], _first: 500){id}}"
+      variables: [
+        { name: "sha", path: "$.after.sha" }
+        { name: "branch", path: "$.branch" }
+      ]
+    )
+}
+
+enum SdmGoalDisplayState {
+  show_all
+  show_current
+}

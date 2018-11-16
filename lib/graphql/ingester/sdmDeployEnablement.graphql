@@ -1,11 +1,11 @@
 type SdmDeployEnablement @rootType {
-    state: SdmDeployState
-    owner: String @compositeId
-    repo: String @compositeId
-    providerId: String @compositeId
+  state: SdmDeployState
+  owner: String @compositeId
+  repo: String @compositeId
+  providerId: String @compositeId
 }
 
 enum SdmDeployState {
-    requested
-    disabled
+  requested
+  disabled
 }

@@ -1,12 +1,16 @@
 type SdmVersion @rootType {
-    repo(name: [String], owner: [String], providerId: [String]): SdmVersionRepository
-    sha: String
-    branch: String @compositeId
-    version: String @compositeId
+  repo(
+    name: [String]
+    owner: [String]
+    providerId: [String]
+  ): SdmVersionRepository
+  sha: String
+  branch: String @compositeId
+  version: String @compositeId
 }
 
 type SdmVersionRepository {
-    name: String
-    owner: String
-    providerId: String
+  name: String
+  owner: String
+  providerId: String
 }

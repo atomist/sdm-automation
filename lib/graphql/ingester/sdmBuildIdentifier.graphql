@@ -1,10 +1,14 @@
 type SdmBuildIdentifier @rootType {
-    repo(name: [String], owner: [String], providerId: [String]): SdmBuildIdentifierRepository
-    identifier: String
+  repo(
+    name: [String]
+    owner: [String]
+    providerId: [String]
+  ): SdmBuildIdentifierRepository
+  identifier: String
 }
 
 type SdmBuildIdentifierRepository {
-    name: String @compositeId
-    owner: String @compositeId
-    providerId: String @compositeId
+  name: String @compositeId
+  owner: String @compositeId
+  providerId: String @compositeId
 }

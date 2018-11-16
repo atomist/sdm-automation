@@ -1,4 +1,4 @@
-query SdmGoals($goalSetId: [String!], $branch: [String]){
+query SdmGoals($goalSetId: [String!], $branch: [String]) {
   SdmGoal(_orderBy: "ts", _first: 100, goalSetId: $goalSetId, branch: $branch) {
     ts
     state

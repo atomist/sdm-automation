@@ -15,13 +15,13 @@
  */
 
 import {
-    ApolloGraphClient,
     automationClientInstance,
     Configuration,
     logger,
     QueryNoCacheOptions,
-    RegistrationConfirmation,
 } from "@atomist/automation-client";
+import { ApolloGraphClient } from "@atomist/automation-client/lib/graph/ApolloGraphClient";
+import { RegistrationConfirmation } from "@atomist/automation-client/lib/internal/transport/websocket/WebSocketRequestProcessor";
 import * as exp from "express";
 import * as _ from "lodash";
 import {
@@ -44,7 +44,7 @@ export async function configureBadgeRoute(config: Configuration): Promise<Config
     return config;
 }
 
-function badgeRequestHandler(config: Configuration) {
+function badgeRequestHandler(config: Configuration): exp.RequestHandler {
     return async (req, res, next) => {
         const team = req.params.team;
         const token = req.params.token;
