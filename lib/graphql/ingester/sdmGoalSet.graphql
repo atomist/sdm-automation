@@ -10,7 +10,9 @@ type SdmGoalSet @rootType {
 
   goals: [SdmGoalName]
 
-  provenance: SdmProvenance
+  provenance(registration: [String]): SdmProvenance
+
+  state: SdmGoalState
 
   push: Push
     @linkTo(
