@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased](https://github.com/atomist/automation-client-sidecar-ts/compare/0.1.19...HEAD)
 
+### Added
+
+-   Add SdmPreference type. [225b377](https://github.com/atomist/sdm-automation/commit/225b3772fa350888542fbbe2e61c27578264f49c)
+
 ## [0.1.19](https://github.com/atomist/automation-client-sidecar-ts/compare/0.1.18...0.1.19) - 2018-12-05
 
 ### Removed
