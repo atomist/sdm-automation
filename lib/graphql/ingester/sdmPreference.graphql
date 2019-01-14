@@ -1,0 +1,7 @@
+type SdmPreference @rootType {
+  key: String @compositeId @searchable
+  value: String
+
+  ttl: Int
+}
+
