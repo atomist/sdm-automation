@@ -18,7 +18,7 @@ type SdmGoal @rootType {
   goalSetId: String @compositeId
   state: SdmGoalState @compositeId
   phase: String @compositeId
-  ts: Int @compositeId
+  ts: Int
   version: Int @compositeId
 
   error: String
