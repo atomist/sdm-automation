@@ -1,0 +1,4 @@
+type SdmRepoProvenance @rootType {
+  repo(name: [String], owner: [String], providerId: [String]): SdmRepository
+  provenance: SdmProvenance
+}

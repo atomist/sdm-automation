@@ -34,6 +34,7 @@ export const configuration: Configuration = {
         GraphQL.ingester({ path: "./lib/graphql/ingester/sdmVersion" }),
         GraphQL.ingester({ path: "./lib/graphql/ingester/sdmGoalSetBadge" }),
         GraphQL.ingester({ path: "./lib/graphql/ingester/sdmPreference" }),
+        GraphQL.ingester({ path: "./lib/graphql/ingester/sdmRepoProvenance" }),
     ],
     postProcessors: [
         configureLogzio,
