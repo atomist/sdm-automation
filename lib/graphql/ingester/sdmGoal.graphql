@@ -38,6 +38,8 @@ type SdmGoal @rootType {
 
   data: String
 
+  signature: String
+
   push: Push
     @linkTo(
       queryName: "pushBySha"
