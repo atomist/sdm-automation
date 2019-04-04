@@ -49,7 +49,7 @@ function badgeRequestHandler(config: Configuration): exp.RequestHandler {
         const team = req.params.team;
         const token = req.params.token;
         const owner = req.params.owner;
-        const repo = req.params.repo;                                                                                                l
+        const repo = req.params.repo;
         const branch = req.params.branch || "master";
 
         logger.info(`Requesting badge for '${owner}/${repo}/${branch}' with token '${token}'`);

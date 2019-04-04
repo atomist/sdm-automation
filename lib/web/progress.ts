@@ -59,7 +59,7 @@ function progressRequestHandler(config: Configuration): exp.RequestHandler {
         // ctx.fillRect(2, 12, Math.round(71 * tick), 10);
         roundRectangle(ctx, 2, 12, Math.round(71 * tick), 8, 2);
         ctx.fill();
-        
+
         const stream = canvas.createPNGStream();
         res.contentType("image/png");
         res.type("png");
@@ -68,8 +68,8 @@ function progressRequestHandler(config: Configuration): exp.RequestHandler {
 }
 
 function roundRectangle(ctx, x, y, w, h, r) {
-    if (w < 2 * r) r = w / 2;
-    if (h < 2 * r) r = h / 2;
+    if (w < 2 * r) { r = w / 2; }
+    if (h < 2 * r) { r = h / 2; }
     ctx.beginPath();
     ctx.moveTo(x + r, y);
     ctx.arcTo(x + w, y, x + w, y + h, r);
