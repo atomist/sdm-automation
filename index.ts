@@ -16,6 +16,7 @@
 
 import {
     Configuration,
+    GraphQL,
 } from "@atomist/automation-client";
 import { configureLogzio } from "@atomist/automation-client-ext-logzio";
 import { configureBadgeRoute } from "./lib/web/badge";
@@ -25,7 +26,7 @@ import { configureProgressBarRoute } from "./lib/web/progress";
  * Automation Client that registers the global SDM types
  */
 export const configuration: Configuration = {
-    /*ingesters: [
+    ingesters: [
         GraphQL.ingester({ path: "./lib/graphql/ingester/sdmGoal" }),
         GraphQL.ingester({ path: "./lib/graphql/ingester/sdmGoalSet" }),
         GraphQL.ingester({ path: "./lib/graphql/ingester/sdmGoalDisplay" }),
@@ -35,7 +36,7 @@ export const configuration: Configuration = {
         GraphQL.ingester({ path: "./lib/graphql/ingester/sdmGoalSetBadge" }),
         GraphQL.ingester({ path: "./lib/graphql/ingester/sdmPreference" }),
         GraphQL.ingester({ path: "./lib/graphql/ingester/sdmRepoProvenance" }),
-    ],*/
+    ],
     postProcessors: [
         configureLogzio,
         configureBadgeRoute,
