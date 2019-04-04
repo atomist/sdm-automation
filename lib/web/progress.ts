@@ -19,9 +19,9 @@ import * as Canvas from "canvas";
 import * as exp from "express";
 
 export async function configureProgressBarRoute(config: Configuration): Promise<Configuration> {
-    config.http.customizers = [(express: exp.Express) => {
+    config.http.customizers.push((express: exp.Express) => {
         express.get("/progress/:state/:tick", progressRequestHandler(config));
-    }];
+    });
     return config;
 }
 
