@@ -38,10 +38,10 @@ function progressRequestHandler(config: Configuration): exp.RequestHandler {
             case "canceled":
                 color = "#9d9d9d";
                 break;
-            case "pending":
+            case "in_process":
                 color = "#cccc00";
                 break;
-            case "error":
+            case "failure":
                 color = "#D94649";
                 break;
             default:
