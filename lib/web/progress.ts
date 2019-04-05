@@ -17,6 +17,7 @@
 import { Configuration } from "@atomist/automation-client";
 import * as Canvas from "canvas";
 import * as exp from "express";
+import * as path from "path";
 
 export async function configureProgressBarRoute(config: Configuration): Promise<Configuration> {
     config.http.customizers.push((express: exp.Express) => {
@@ -34,30 +35,59 @@ function progressRequestHandler(config: Configuration): exp.RequestHandler {
         const ctx = canvas.getContext("2d");
 
         let color;
+        let image;
         switch (state) {
             case "canceled":
                 color = "#9d9d9d";
+                image = await Canvas.loadImage(path.join(__dirname, "images", "atomist_build_canceled.png"));
+                break;
+            case "stopped":
+                color = "#D0BB3A";
+                image = await Canvas.loadImage(path.join(__dirname, "images", "atomist_build_stopped.png"));
                 break;
             case "in_process":
-                color = "#cccc00";
+                color = "#D0BB3A";
+                image = await Canvas.loadImage(path.join(__dirname, "images", "atomist_build_started.png"));
+                break;
+            case "requested":
+            case "planned":
+                color = "#D0BB3A";
+                image = await Canvas.loadImage(path.join(__dirname, "images", "atomist_build_requested.png"));
                 break;
             case "failure":
                 color = "#D94649";
+                image = await Canvas.loadImage(path.join(__dirname, "images", "atomist_build_failed.png"));
+                break;
+            case "waiting_for_approval":
+            case "approved":
+                color = "#45B254";
+                image = await Canvas.loadImage(path.join(__dirname, "images", "atomist_build_approval.png"));
+                break;
+            case "waiting_pre_for_approval":
+            case "pre_approved":
+                color = "#D0BB3A";
+                image = await Canvas.loadImage(path.join(__dirname, "images", "atomist_build_preapproval.png"));
                 break;
             default:
                 color = "#45B254";
+                image = await Canvas.loadImage(path.join(__dirname, "images", "atomist_build_passed.png"));
                 break;
         }
 
-        ctx.fillStyle = "#9d9d9d";
-        ctx.fillRect(0, 10, 75, 1);
-        ctx.fillRect(0, 21, 75, 1);
-        ctx.fillRect(0, 10, 1, 12);
-        ctx.fillRect(74, 10, 1, 12);
+        ctx.fillStyle = color;
+        roundRectangle(ctx, 61, 20, 12, 12, 2);
+        ctx.fill();
+        
+        ctx.drawImage(image, 58, 17, 18, 18);
+
+        ctx.fillStyle = "#dfdfdf";
+        ctx.fillRect(0, 20, 58, 1);
+        ctx.fillRect(0, 31, 58, 1);
+        ctx.fillRect(0, 20, 1, 12);
+        ctx.fillRect(58, 20, 1, 12);
 
         ctx.fillStyle = color;
-        // ctx.fillRect(2, 12, Math.round(71 * tick), 10);
-        roundRectangle(ctx, 2, 12, Math.round(71 * tick), 8, 2);
+        roundRectangle(ctx, 2, 22, Math.round(55 * tick), 8, 2);
         ctx.fill();
 
         const stream = canvas.createPNGStream();
@@ -68,8 +98,12 @@ function progressRequestHandler(config: Configuration): exp.RequestHandler {
 }
 
 function roundRectangle(ctx, x, y, w, h, r) {
-    if (w < 2 * r) { r = w / 2; }
-    if (h < 2 * r) { r = h / 2; }
+    if (w < 2 * r) {
+        r = w / 2;
+    }
+    if (h < 2 * r) {
+        r = h / 2;
+    }
     ctx.beginPath();
     ctx.moveTo(x + r, y);
     ctx.arcTo(x + w, y, x + w, y + h, r);
