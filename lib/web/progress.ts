@@ -63,7 +63,7 @@ function progressRequestHandler(config: Configuration): exp.RequestHandler {
                 color = "#45B254";
                 image = await Canvas.loadImage(path.join(__dirname, "images", "atomist_build_approval.png"));
                 break;
-            case "waiting_pre_for_approval":
+            case "waiting_for_pre_approval":
             case "pre_approved":
                 color = "#D0BB3A";
                 image = await Canvas.loadImage(path.join(__dirname, "images", "atomist_build_preapproval.png"));
