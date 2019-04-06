@@ -5,7 +5,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased](https://github.com/atomist/automation-client-sidecar-ts/compare/0.1.29...HEAD)
+## [Unreleased](https://github.com/atomist/automation-client-sidecar-ts/compare/0.1.30...HEAD)
+
+## [0.1.30](https://github.com/atomist/automation-client-sidecar-ts/compare/0.1.29...0.1.30) - 2019-04-06
 
 ## [0.1.29](https://github.com/atomist/automation-client-sidecar-ts/compare/0.1.28...0.1.29) - 2019-04-05
 
