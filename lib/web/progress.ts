@@ -21,7 +21,12 @@ import * as path from "path";
 
 export async function configureProgressBarRoute(config: Configuration): Promise<Configuration> {
     config.http.customizers.push((express: exp.Express) => {
-        express.get("/progress/:state/:tick", progressRequestHandler(config));
+        express.get("/progress/:state/:tick", async (req, res) => {
+            const state = req.params.state;
+            const tick = req.params.tick;
+            res.redirect(301, `/v1/progress/${state}/${tick}`);
+        });
+        express.get("/v1/progress/:state/:tick", progressRequestHandler(config));
     });
     return config;
 }
@@ -39,38 +44,38 @@ function progressRequestHandler(config: Configuration): exp.RequestHandler {
         switch (state) {
             case "canceled":
                 color = "#9d9d9d";
-                image = await Canvas.loadImage(path.join(__dirname, "images", "atomist_build_canceled.png"));
+                image = await Canvas.loadImage(path.join(__dirname, "images", "v1", "atomist_build_canceled.png"));
                 break;
             case "stopped":
                 color = "#D0BB3A";
-                image = await Canvas.loadImage(path.join(__dirname, "images", "atomist_build_stopped.png"));
+                image = await Canvas.loadImage(path.join(__dirname, "images", "v1", "atomist_build_stopped.png"));
                 break;
             case "in_process":
                 color = "#D0BB3A";
-                image = await Canvas.loadImage(path.join(__dirname, "images", "atomist_build_started.png"));
+                image = await Canvas.loadImage(path.join(__dirname, "images", "v1", "atomist_build_started.png"));
                 break;
             case "requested":
             case "planned":
                 color = "#D0BB3A";
-                image = await Canvas.loadImage(path.join(__dirname, "images", "atomist_build_requested.png"));
+                image = await Canvas.loadImage(path.join(__dirname, "images", "v1", "atomist_build_requested.png"));
                 break;
             case "failure":
                 color = "#D94649";
-                image = await Canvas.loadImage(path.join(__dirname, "images", "atomist_build_failed.png"));
+                image = await Canvas.loadImage(path.join(__dirname, "images", "v1", "atomist_build_failed.png"));
                 break;
             case "waiting_for_approval":
             case "approved":
                 color = "#45B254";
-                image = await Canvas.loadImage(path.join(__dirname, "images", "atomist_build_approval.png"));
+                image = await Canvas.loadImage(path.join(__dirname, "images", "v1", "atomist_build_approval.png"));
                 break;
             case "waiting_for_pre_approval":
             case "pre_approved":
                 color = "#D0BB3A";
-                image = await Canvas.loadImage(path.join(__dirname, "images", "atomist_build_preapproval.png"));
+                image = await Canvas.loadImage(path.join(__dirname, "images", "v1", "atomist_build_preapproval.png"));
                 break;
             default:
                 color = "#45B254";
-                image = await Canvas.loadImage(path.join(__dirname, "images", "atomist_build_passed.png"));
+                image = await Canvas.loadImage(path.join(__dirname, "images", "v1", "atomist_build_passed.png"));
                 break;
         }
 

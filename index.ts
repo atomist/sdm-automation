@@ -21,6 +21,7 @@ import {
 import { configureLogzio } from "@atomist/automation-client-ext-logzio";
 import { configureBadgeRoute } from "./lib/web/badge";
 import { configureProgressBarRoute } from "./lib/web/progress";
+import { configureProgressBarRouteV2 } from "./lib/web/progressV2";
 
 /**
  * Automation Client that registers the global SDM types
@@ -39,7 +40,8 @@ export const configuration: Configuration = {
     ],
     postProcessors: [
         configureLogzio,
-        configureBadgeRoute,
         configureProgressBarRoute,
+        configureProgressBarRouteV2,
+        configureBadgeRoute,
     ],
 };

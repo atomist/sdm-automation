@@ -38,11 +38,24 @@ const Logo = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHL
 
 export async function configureBadgeRoute(config: Configuration): Promise<Configuration> {
     config.http.customizers.push((express: exp.Express) => {
-        express.get("/:team/:owner/:repo/:token", badgeRequestHandler(config));
-        express.get("/:team/:owner/:repo/:branch/:token", badgeRequestHandler(config));
+        express.get("/v1/badge/:team/:owner/:repo/:token", badgeRequestHandler(config));
+        express.get("/v1/badge/:team/:owner/:repo/:branch/:token", badgeRequestHandler(config));
+    });
+    config.http.customizers.push((express: exp.Express) => {
+        express.get("/:team/:owner/:repo/:token", redirectBadgeRequesHandler);
+        express.get("/:team/:owner/:repo/:branch/:token", redirectBadgeRequesHandler);
     });
     return config;
 }
+
+const redirectBadgeRequesHandler: exp.RequestHandler = async (req, res) => {
+    const team = req.params.team;
+    const token = req.params.token;
+    const owner = req.params.owner;
+    const repo = req.params.repo;
+    const branch = req.params.branch || "master";
+    res.redirect(301, `/v1/badge/${team}/${owner}/${repo}/${branch}/${token}`);
+};
 
 function badgeRequestHandler(config: Configuration): exp.RequestHandler {
     return async (req, res, next) => {
