@@ -111,7 +111,7 @@ function progressRequestHandler(config: Configuration): exp.RequestHandler {
 
         ctx.drawImage(image, (75 - 18) / 2, 12, 18, 18);
 
-        ctx.strokeStyle = "#9d9d9d";
+        ctx.strokeStyle = "#bfbfbf";
         ctx.beginPath();
         ctx.arc(37.5, 30, 28, 0 * Math.PI, 2 * Math.PI);
         ctx.stroke();
@@ -128,6 +128,7 @@ function progressRequestHandler(config: Configuration): exp.RequestHandler {
 
         ctx.strokeStyle = color;
         ctx.lineWidth = 3;
+        ctx.lineCap = "round";
         ctx.beginPath();
         ctx.arc(37.5, 30, 28, start * Math.PI, angle * Math.PI);
         ctx.stroke();
