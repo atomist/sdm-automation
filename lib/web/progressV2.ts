@@ -62,6 +62,8 @@ function progressRequestHandler(config: Configuration): exp.RequestHandler {
         ctx.quality = "best";
         ctx.patternQuality  = "best";
         ctx.antialias = "subpixel";
+        ctx.imageSmoothingEnabled = true;
+        ctx.imageSmoothingQuality = "high";
 
         let color;
         let image;
@@ -112,11 +114,11 @@ function progressRequestHandler(config: Configuration): exp.RequestHandler {
                 break;
         }
 
-        ctx.drawImage(image, (75 - 18) / 2, 12, 18, 18);
+        ctx.drawImage(image, Math.round((75 - 20) / 2), 10, 20, 20);
 
-        ctx.strokeStyle = "#bfbfbf";
+        ctx.strokeStyle = "#cccccc";
         ctx.beginPath();
-        ctx.arc(37.5, 30, 28, 0 * Math.PI, 2 * Math.PI);
+        ctx.arc(37, 30, 28, 0 * Math.PI, 2 * Math.PI);
         ctx.stroke();
 
         const rate = +(current / total).toFixed(2) * 2;
@@ -133,7 +135,7 @@ function progressRequestHandler(config: Configuration): exp.RequestHandler {
         ctx.lineWidth = 3;
         ctx.lineCap = "round";
         ctx.beginPath();
-        ctx.arc(37.5, 30, 28, start * Math.PI, angle * Math.PI);
+        ctx.arc(37, 30, 28, start * Math.PI, angle * Math.PI);
         ctx.stroke();
 
         const tick = `${current}/${total}`;
@@ -141,16 +143,16 @@ function progressRequestHandler(config: Configuration): exp.RequestHandler {
         ctx.font = `10px "Lato" bold`;
         let text = ctx.measureText(tick);
         let w = text.width;
-        ctx.fillText(tick, (75 - w) / 2, 43);
+        ctx.fillText(tick, Math.round((75 - w) / 2), 45);
 
         ctx.font = `10px "Lato"`;
         text = ctx.measureText(label);
         w = text.width;
-        ctx.fillText(label, (75 - w) / 2, 71);
+        ctx.fillText(label, Math.round((75 - w) / 2), 71);
 
         const stream = canvas.createPNGStream({
             compressionLevel: 0,
-            resolution: 300,
+            resolution: 750,
         });
         res.contentType("image/png");
         res.type("png");
