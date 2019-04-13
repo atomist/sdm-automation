@@ -59,6 +59,9 @@ function progressRequestHandler(config: Configuration): exp.RequestHandler {
 
         const canvas = Canvas.createCanvas(75, 75);
         const ctx = canvas.getContext("2d");
+        ctx.quality = "best";
+        ctx.patternQuality  = "best";
+        ctx.antialias = "subpixel";
 
         let color;
         let image;
