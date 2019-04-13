@@ -118,7 +118,7 @@ function progressRequestHandler(config: Configuration): exp.RequestHandler {
 
         ctx.strokeStyle = "#cccccc";
         ctx.beginPath();
-        ctx.arc(37, 30, 28, 0 * Math.PI, 2 * Math.PI);
+        ctx.arc(38, 30, 28, 0 * Math.PI, 2 * Math.PI);
         ctx.stroke();
 
         const rate = +(current / total).toFixed(2) * 2;
@@ -135,7 +135,7 @@ function progressRequestHandler(config: Configuration): exp.RequestHandler {
         ctx.lineWidth = 3;
         ctx.lineCap = "round";
         ctx.beginPath();
-        ctx.arc(37, 30, 28, start * Math.PI, angle * Math.PI);
+        ctx.arc(38, 30, 28, start * Math.PI, angle * Math.PI);
         ctx.stroke();
 
         const tick = `${current}/${total}`;
@@ -152,7 +152,7 @@ function progressRequestHandler(config: Configuration): exp.RequestHandler {
 
         const stream = canvas.createPNGStream({
             compressionLevel: 0,
-            resolution: 750,
+            resolution: 600,
         });
         res.contentType("image/png");
         res.type("png");
