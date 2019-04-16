@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased](https://github.com/atomist/automation-client-sidecar-ts/compare/0.1.34...HEAD)
 
+### Added
+
+-   Add format support for progress image. [40ce74f](https://github.com/atomist/sdm-automation/commit/40ce74fdd3eacaa8d810eea1a1ce48cd1be89dd0)
+
 ## [0.1.34](https://github.com/atomist/automation-client-sidecar-ts/compare/0.1.33...0.1.34) - 2019-04-13
 
 ## [0.1.33](https://github.com/atomist/automation-client-sidecar-ts/compare/0.1.32...0.1.33) - 2019-04-13
