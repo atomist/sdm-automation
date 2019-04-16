@@ -56,6 +56,7 @@ function progressRequestHandler(config: Configuration): exp.RequestHandler {
         const state = req.params.state;
         const current = req.params.current;
         const total = req.params.total;
+        const format = req.query.format || "full";
 
         const canvas = Canvas.createCanvas(75, 75);
         const ctx = canvas.getContext("2d");
@@ -145,10 +146,12 @@ function progressRequestHandler(config: Configuration): exp.RequestHandler {
         let w = text.width;
         ctx.fillText(tick, Math.round((75 - w) / 2), 45);
 
-        ctx.font = `10px "Lato"`;
-        text = ctx.measureText(label);
-        w = text.width;
-        ctx.fillText(label, Math.round((75 - w) / 2), 71);
+        if (format === "full") {
+            ctx.font = `10px "Lato"`;
+            text = ctx.measureText(label);
+            w = text.width;
+            ctx.fillText(label, Math.round((75 - w) / 2), 71);
+        }
 
         const stream = canvas.createPNGStream({
             compressionLevel: 0,
