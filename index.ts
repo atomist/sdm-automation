@@ -28,6 +28,10 @@ import { configureProgressBarRouteV2 } from "./lib/web/progressV2";
  */
 export const configuration: Configuration = {
     ingesters: [
+        GraphQL.ingester({ path: "./lib/graphql/ingester/commitIssueRelationship" }),
+        GraphQL.ingester({ path: "./lib/graphql/ingester/deployment" }),
+        GraphQL.ingester({ path: "./lib/graphql/ingester/issueRelationship" }),
+
         GraphQL.ingester({ path: "./lib/graphql/ingester/sdmGoal" }),
         GraphQL.ingester({ path: "./lib/graphql/ingester/sdmGoalSet" }),
         GraphQL.ingester({ path: "./lib/graphql/ingester/sdmGoalDisplay" }),
