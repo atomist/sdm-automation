@@ -14,6 +14,8 @@ type SdmGoalSet @rootType {
 
   state: SdmGoalState
 
+  tags: [SdmGoalSetTag]
+
   push: Push
     @linkTo(
       queryName: "pushBySha"
@@ -35,4 +37,9 @@ type SdmGoalSet @rootType {
 type SdmGoalName {
   name: String
   uniqueName: String
+}
+
+type SdmGoalSetTag {
+  name: String
+  value: String
 }
