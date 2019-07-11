@@ -18,7 +18,6 @@ import {
     Configuration,
     GraphQL,
 } from "@atomist/automation-client";
-import { configureLogzio } from "@atomist/automation-client-ext-logzio";
 import { configureBadgeRoute } from "./lib/web/badge";
 import { configureProgressBarRoute } from "./lib/web/progress";
 import { configureProgressBarRouteV2 } from "./lib/web/progressV2";
@@ -43,7 +42,6 @@ export const configuration: Configuration = {
         GraphQL.ingester({ path: "./lib/graphql/ingester/sdmRepoProvenance" }),
     ],
     postProcessors: [
-        configureLogzio,
         configureProgressBarRoute,
         configureProgressBarRouteV2,
         configureBadgeRoute,

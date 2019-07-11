@@ -30,7 +30,7 @@ type SdmGoal @rootType {
   preApproval: SdmProvenance
   preApprovalRequired: Boolean
 
-  provenance: [SdmProvenance]
+  provenance(registration: [String]): [SdmProvenance]
 
   preConditions: [SdmCondition]
 
