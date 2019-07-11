@@ -28,7 +28,7 @@ const Images = {
     approval: undefined,
     preApproval: undefined,
     success: undefined,
-}
+};
 
 export async function configureProgressBarRouteV2(config: Configuration): Promise<Configuration> {
 
@@ -106,7 +106,7 @@ function progressRequestHandler(config: Configuration): exp.RequestHandler {
             case "pre_approved":
                 color = "#D7B958";
                 label = "Waiting";
-                image = Images.preApproval
+                image = Images.preApproval;
                 break;
             default:
                 color = "#37A745";

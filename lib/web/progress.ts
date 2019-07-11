@@ -82,7 +82,7 @@ function progressRequestHandler(config: Configuration): exp.RequestHandler {
         ctx.fillStyle = color;
         roundRectangle(ctx, 61, 10, 12, 12, 2);
         ctx.fill();
-        
+
         ctx.drawImage(image, 58, 7, 18, 18);
 
         ctx.fillStyle = "#dfdfdf";
