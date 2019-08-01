@@ -73,7 +73,7 @@ function badgeRequestHandler(config: Configuration): exp.RequestHandler {
             { Authorization: `Bearer ${((automationClientInstance().webSocketHandler as any).registration as RegistrationConfirmation).jwt}` });
 
         const badge = await graphClient.query<SdmGoalSetBadge.Query, SdmGoalSetBadge.Variables>({
-            name: "sdmGoalSetBadge",
+            name: "SdmGoalSetBadge",
             variables: {
                 token: [token],
             },
@@ -89,7 +89,7 @@ function badgeRequestHandler(config: Configuration): exp.RequestHandler {
             }
 
             const goalSet = await graphClient.query<SdmGoalSet.Query, SdmGoalSet.Variables>({
-                name: "sdmGoalSet",
+                name: "SdmGoalSet",
                 variables: {
                     owner: [bRepo.owner],
                     repo: [bRepo.name],
@@ -103,7 +103,7 @@ function badgeRequestHandler(config: Configuration): exp.RequestHandler {
                 const goalSetId = goalSet.SdmGoal[0].goalSetId;
                 const goalSetName = goalSet.SdmGoal[0].goalSet;
                 const goals = (await graphClient.query<SdmGoals.Query, SdmGoals.Variables>({
-                    name: "sdmGoals",
+                    name: "SdmGoals",
                     variables: {
                         goalSetId: [goalSetId],
                     },
