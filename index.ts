@@ -40,6 +40,8 @@ export const configuration: Configuration = {
         GraphQL.ingester({ path: "./lib/graphql/ingester/sdmGoalSetBadge" }),
         GraphQL.ingester({ path: "./lib/graphql/ingester/sdmPreference" }),
         GraphQL.ingester({ path: "./lib/graphql/ingester/sdmRepoProvenance" }),
+
+        GraphQL.ingester({ path: "./lib/graphql/ingester/policyLog" }),
     ],
     postProcessors: [
         configureProgressBarRoute,
