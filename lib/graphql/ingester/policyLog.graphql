@@ -1,58 +1,60 @@
 type PolicyLog @rootType {
-  type: String!
-  name: String!
+    type: String!
+    name: String!
 
-  manage: ManagePolicyLog
-  apply: ApplyPolicyLog
+    manage: ManagePolicyLog
+    apply: ApplyPolicyLog
+
+    ts: Int!
 }
 
 type ManagePolicyLog {
-  action: ManagePolicyAction!
-  reason: String!
-  author: String!
-  targetSha: String!
-  targetValue: String!
+    action: ManagePolicyAction!
+    reason: String!
+    author: String!
+    targetSha: String!
+    targetValue: String!
 }
 
 enum ManagePolicyAction {
-  set
-  unset
+    set
+    unset
 }
 
 type ApplyPolicyLog {
-  _name: String!
-  _owner: String!
-  _provider: String!
+    _name: String!
+    _owner: String!
+    _provider: String!
 
-  ##repo: Repo
-  ##@linkTo(
-  ##    queryName: "linkedRepo"
-  ##    variables: [
-  ##        { name: "name", path: "$.name" }
-  ##        { name: "owner", path: "$.owner" }
-  ##        { name: "provider", path: "$.provider" }
-  ##    ]
-  ##)
+    ##repo: Repo
+    ##@linkTo(
+    ##    queryName: "linkedRepo"
+    ##    variables: [
+    ##        { name: "name", path: "$.name" }
+    ##        { name: "owner", path: "$.owner" }
+    ##        { name: "provider", path: "$.provider" }
+    ##    ]
+    ##)
 
-  _sha: String!
-  commit: Commit
+    _sha: String!
+    commit: Commit
     @linkTo(
-      queryName: "commitBySha"
-      variables: [{ name: "sha", path: "$._sha" }]
+        queryName: "commitBySha"
+        variables: [{ name: "sha", path: "$._sha" }]
     )
 
-  _prId: String
-  ##pr: String
+    _prId: String
+    ##pr: String
 
-  state: ApplyPolicyState!
+    state: ApplyPolicyState!
 
-  branch: String!
-  targetSha: String!
+    branch: String!
+    targetSha: String!
 
-  message: String
+    message: String
 }
 
 enum ApplyPolicyState {
-  success
-  failure
+    success
+    failure
 }
