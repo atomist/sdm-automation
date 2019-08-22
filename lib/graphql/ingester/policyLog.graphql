@@ -1,51 +1,50 @@
 type PolicyLog @rootType {
-    type: String
-    name: String
+  type: String
+  name: String
 
-    manage: ManagePolicyLog
-    apply: ApplyPolicyLog
+  manage: ManagePolicyLog
+  apply: ApplyPolicyLog
 
-    ts: Int
+  ts: Int
 }
 
 type ManagePolicyLog {
-    action: ManagePolicyAction
-    reason: String
-    author: String
-    targetSha: String
-    targetValue: String
+  action: ManagePolicyAction
+  reason: String
+  author: String
+  targetSha: String
+  targetValue: String
 }
 
 enum ManagePolicyAction {
-    set
-    unset
+  set
+  unset
 }
 
 type ApplyPolicyLog {
-
-    _sha: String
-    commit: Commit
+  _sha: String
+  commit: Commit
     @linkTo(
-        queryName: "commitBySha"
-        variables: [{ name: "sha", path: "$._sha" }]
+      queryName: "commitBySha"
+      variables: [{ name: "sha", path: "$._sha" }]
     )
 
-    _prId: ID
-    pullRequest: PullRequest
+  _prId: ID
+  pullRequest: PullRequest
     @linkTo(
-        queryName: "pullRequestById"
-        variables: [{ name: "id", path: "$._prId" }]
+      queryName: "pullRequestById"
+      variables: [{ name: "id", path: "$._prId" }]
     )
 
-    state: ApplyPolicyState
+  state: ApplyPolicyState
 
-    branch: String
-    targetSha: String
+  branch: String
+  targetSha: String
 
-    message: String
+  message: String
 }
 
 enum ApplyPolicyState {
-    success
-    failure
+  success
+  failure
 }
