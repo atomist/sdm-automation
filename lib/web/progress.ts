@@ -92,7 +92,7 @@ function progressRequestHandler(config: Configuration): exp.RequestHandler {
         ctx.fillRect(58, 10, 1, 12);
 
         ctx.fillStyle = color;
-        roundRectangle(ctx, 2, 12, Math.round(55 * tick), 8, 2);
+        roundRectangle(ctx, 2, 12, Math.round(55 * +tick), 8, 2);
         ctx.fill();
 
         const stream = canvas.createPNGStream();

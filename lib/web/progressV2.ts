@@ -122,7 +122,7 @@ function progressRequestHandler(config: Configuration): exp.RequestHandler {
         ctx.arc(38, 30, 28, 0 * Math.PI, 2 * Math.PI);
         ctx.stroke();
 
-        const rate = +(current / total).toFixed(2) * 2;
+        const rate = +(+current / +total).toFixed(2) * 2;
         let start = 1.5;
         let angle = rate - 0.5;
         if (angle < 0) {
