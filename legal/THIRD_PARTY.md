@@ -14,7 +14,7 @@ This page details all runtime OSS dependencies of `@atomist/sdm-automation`.
 |[Apache-2.0](#apache-20)|21|
 |[Apache](#apache)|4|
 |[BSD-2-Clause](#bsd-2-clause)|16|
-|[BSD-3-Clause](#bsd-3-clause)|25|
+|[BSD-3-Clause](#bsd-3-clause)|24|
 |[BSD](#bsd)|35|
 |[CC0-1.0](#cc0-10)|2|
 |[Custom: http://github.com/substack/node-bufferlist](#custom-httpgithubcomsubstacknode-bufferlist)|1|
@@ -24,15 +24,15 @@ This page details all runtime OSS dependencies of `@atomist/sdm-automation`.
 |[Custom: https://github.com/graphql/graphql-language-service](#custom-httpsgithubcomgraphqlgraphql-language-service)|2|
 |[Custom: https://github.com/medikoo/clock](#custom-httpsgithubcommedikooclock)|1|
 |[GPL-3.0](#gpl-30)|3|
-|[ISC](#isc)|96|
+|[ISC](#isc)|89|
 |[LGPL-3.0](#lgpl-30)|1|
 |[MIT AND BSD-3-Clause](#mit-and-bsd-3-clause)|1|
-|[MIT](#mit)|889|
+|[MIT](#mit)|887|
 |[PSF](#psf)|2|
 |[Public Domain](#public-domain)|1|
 |[The MIT License](#the-mit-license)|1|
 |[UNKNOWN](#unknown)|4|
-|[Unlicense](#unlicense)|2|
+|[Unlicense](#unlicense)|1|
 |[WTFPL](#wtfpl)|2|
 
 #### AFLv2.1
@@ -158,7 +158,6 @@ BSD 3-Clause "New" or "Revised" License - [http://www.opensource.org/licenses/BS
 |`isemail`|`3.2.0`||[https://github.com/hapijs/isemail](https://github.com/hapijs/isemail)|
 |`joi`|`14.3.1`||[https://github.com/hapijs/joi](https://github.com/hapijs/joi)|
 |`node-pre-gyp`|`0.11.0`|Dane Springmeyer|[https://github.com/mapbox/node-pre-gyp](https://github.com/mapbox/node-pre-gyp)|
-|`node-pre-gyp`|`0.13.0`|Dane Springmeyer|[https://github.com/mapbox/node-pre-gyp](https://github.com/mapbox/node-pre-gyp)|
 |`qs`|`6.5.2`||[https://github.com/ljharb/qs](https://github.com/ljharb/qs)|
 |`qs`|`6.7.0`||[https://github.com/ljharb/qs](https://github.com/ljharb/qs)|
 |`shelljs`|`0.7.7`||[https://github.com/shelljs/shelljs](https://github.com/shelljs/shelljs)|
@@ -237,7 +236,6 @@ ISC License - [https://www.isc.org/downloads/software-support-policy/isc-license
 |`aproba`|`1.2.0`|Rebecca Turner|[https://github.com/iarna/aproba](https://github.com/iarna/aproba)|
 |`are-we-there-yet`|`1.1.5`|Rebecca Turner|[https://github.com/iarna/are-we-there-yet](https://github.com/iarna/are-we-there-yet)|
 |`boolbase`|`1.0.0`|Felix Boehm|[https://github.com/fb55/boolbase](https://github.com/fb55/boolbase)|
-|`chownr`|`1.1.1`|Isaac Z. Schlueter|[https://github.com/isaacs/chownr](https://github.com/isaacs/chownr)|
 |`chownr`|`1.1.2`|Isaac Z. Schlueter|[https://github.com/isaacs/chownr](https://github.com/isaacs/chownr)|
 |`cli-width`|`1.1.1`|Ilya Radchenko|[https://github.com/knownasilya/cli-width](https://github.com/knownasilya/cli-width)|
 |`cli-width`|`2.2.0`|Ilya Radchenko|[https://github.com/knownasilya/cli-width](https://github.com/knownasilya/cli-width)|
@@ -247,7 +245,6 @@ ISC License - [https://www.isc.org/downloads/software-support-policy/isc-license
 |`duration`|`0.2.2`|Mariusz Nowak|[https://github.com/medikoo/duration](https://github.com/medikoo/duration)|
 |`es5-ext`|`0.10.50`|Mariusz Nowak|[https://github.com/medikoo/es5-ext](https://github.com/medikoo/es5-ext)|
 |`fastq`|`1.6.0`|Matteo Collina|[https://github.com/mcollina/fastq](https://github.com/mcollina/fastq)|
-|`fs-minipass`|`1.2.5`|Isaac Z. Schlueter|[https://github.com/npm/fs-minipass](https://github.com/npm/fs-minipass)|
 |`fs-minipass`|`1.2.6`|Isaac Z. Schlueter|[https://github.com/npm/fs-minipass](https://github.com/npm/fs-minipass)|
 |`fs.realpath`|`1.0.0`|Isaac Z. Schlueter|[https://github.com/isaacs/fs.realpath](https://github.com/isaacs/fs.realpath)|
 |`fstream-ignore`|`1.0.5`|Isaac Z. Schlueter|[https://github.com/isaacs/fstream-ignore](https://github.com/isaacs/fstream-ignore)|
@@ -257,7 +254,6 @@ ISC License - [https://www.isc.org/downloads/software-support-policy/isc-license
 |`glob-parent`|`5.0.0`|Gulp Team|[https://github.com/gulpjs/glob-parent](https://github.com/gulpjs/glob-parent)|
 |`glob-promise`|`3.4.0`|Ahmad Nassri|[https://github.com/ahmadnassri/glob-promise](https://github.com/ahmadnassri/glob-promise)|
 |`glob`|`4.5.3`|Isaac Z. Schlueter|[https://github.com/isaacs/node-glob](https://github.com/isaacs/node-glob)|
-|`glob`|`7.1.3`|Isaac Z. Schlueter|[https://github.com/isaacs/node-glob](https://github.com/isaacs/node-glob)|
 |`glob`|`7.1.4`|Isaac Z. Schlueter|[https://github.com/isaacs/node-glob](https://github.com/isaacs/node-glob)|
 |`graceful-fs`|`3.0.11`|Isaac Z. Schlueter|[https://github.com/isaacs/node-graceful-fs](https://github.com/isaacs/node-graceful-fs)|
 |`graceful-fs`|`4.1.11`||[https://github.com/isaacs/node-graceful-fs](https://github.com/isaacs/node-graceful-fs)|
@@ -290,7 +286,6 @@ ISC License - [https://www.isc.org/downloads/software-support-policy/isc-license
 |`nopt`|`3.0.6`|Isaac Z. Schlueter|[https://github.com/npm/nopt](https://github.com/npm/nopt)|
 |`nopt`|`4.0.1`|Isaac Z. Schlueter|[https://github.com/npm/nopt](https://github.com/npm/nopt)|
 |`npm-bundled`|`1.0.6`|Isaac Z. Schlueter|[https://github.com/npm/npm-bundled](https://github.com/npm/npm-bundled)|
-|`npm-packlist`|`1.4.1`|Isaac Z. Schlueter|[https://github.com/npm/npm-packlist](https://github.com/npm/npm-packlist)|
 |`npm-packlist`|`1.4.4`|Isaac Z. Schlueter|[https://github.com/npm/npm-packlist](https://github.com/npm/npm-packlist)|
 |`npmlog`|`4.1.2`|Isaac Z. Schlueter|[https://github.com/npm/npmlog](https://github.com/npm/npmlog)|
 |`once`|`1.4.0`|Isaac Z. Schlueter|[https://github.com/isaacs/once](https://github.com/isaacs/once)|
@@ -298,13 +293,11 @@ ISC License - [https://www.isc.org/downloads/software-support-policy/isc-license
 |`pseudomap`|`1.0.2`|Isaac Z. Schlueter|[https://github.com/isaacs/pseudomap](https://github.com/isaacs/pseudomap)|
 |`read`|`1.0.7`|Isaac Z. Schlueter|[https://github.com/isaacs/read](https://github.com/isaacs/read)|
 |`remove-trailing-separator`|`1.1.0`|darsain|[https://github.com/darsain/remove-trailing-separator](https://github.com/darsain/remove-trailing-separator)|
-|`rimraf`|`2.6.3`|Isaac Z. Schlueter|[https://github.com/isaacs/rimraf](https://github.com/isaacs/rimraf)|
-|`rimraf`|`3.0.0`|Isaac Z. Schlueter|[https://github.com/isaacs/rimraf](https://github.com/isaacs/rimraf)|
+|`rimraf`|`2.7.1`|Isaac Z. Schlueter|[https://github.com/isaacs/rimraf](https://github.com/isaacs/rimraf)|
 |`sax`|`1.1.6`|Isaac Z. Schlueter|[https://github.com/isaacs/sax-js](https://github.com/isaacs/sax-js)|
 |`sax`|`1.2.4`|Isaac Z. Schlueter|[https://github.com/isaacs/sax-js](https://github.com/isaacs/sax-js)|
 |`semver`|`4.3.6`||[https://github.com/npm/node-semver](https://github.com/npm/node-semver)|
 |`semver`|`5.6.0`||[https://github.com/npm/node-semver](https://github.com/npm/node-semver)|
-|`semver`|`5.7.0`||[https://github.com/npm/node-semver](https://github.com/npm/node-semver)|
 |`semver`|`6.3.0`||[https://github.com/npm/node-semver](https://github.com/npm/node-semver)|
 |`set-blocking`|`2.0.0`|Ben Coe|[https://github.com/yargs/set-blocking](https://github.com/yargs/set-blocking)|
 |`setprototypeof`|`1.1.1`|Wes Todd|[https://github.com/wesleytodd/setprototypeof](https://github.com/wesleytodd/setprototypeof)|
@@ -312,7 +305,6 @@ ISC License - [https://www.isc.org/downloads/software-support-policy/isc-license
 |`sprintf-kit`|`2.0.0`|Mariusz Nowak|[https://github.com/medikoo/sprintf-kit](https://github.com/medikoo/sprintf-kit)|
 |`stringify-tree`|`1.0.2`|Jessica Kerr|[https://github.com/jessitron/stringify-tree](https://github.com/jessitron/stringify-tree)|
 |`tar`|`4.4.10`|Isaac Z. Schlueter|[https://github.com/npm/node-tar](https://github.com/npm/node-tar)|
-|`tar`|`4.4.8`|Isaac Z. Schlueter|[https://github.com/npm/node-tar](https://github.com/npm/node-tar)|
 |`timers-ext`|`0.1.7`|Mariusz Nowak|[https://github.com/medikoo/timers-ext](https://github.com/medikoo/timers-ext)|
 |`tinyqueue`|`2.0.0`||[https://github.com/mourner/tinyqueue](https://github.com/mourner/tinyqueue)|
 |`touch`|`0.0.3`|Isaac Z. Schlueter|[https://github.com/isaacs/node-touch](https://github.com/isaacs/node-touch)|
@@ -921,7 +913,6 @@ MIT License - [http://www.opensource.org/licenses/MIT](http://www.opensource.org
 |`nan`|`1.0.0`||[https://github.com/rvagg/nan](https://github.com/rvagg/nan)|
 |`nan`|`2.14.0`||[https://github.com/nodejs/nan](https://github.com/nodejs/nan)|
 |`natural-orderby`|`2.0.3`|Olaf Ennen|[https://github.com/yobacca/natural-orderby](https://github.com/yobacca/natural-orderby)|
-|`needle`|`2.3.1`|Tomás Pollak|[https://github.com/tomas/needle](https://github.com/tomas/needle)|
 |`needle`|`2.4.0`|Tomás Pollak|[https://github.com/tomas/needle](https://github.com/tomas/needle)|
 |`negotiator`|`0.6.2`||[https://github.com/jshttp/negotiator](https://github.com/jshttp/negotiator)|
 |`nested-error-stacks`|`1.0.2`|Matt Lavin|[https://github.com/mdlavin/nested-error-stacks](https://github.com/mdlavin/nested-error-stacks)|
@@ -1025,7 +1016,6 @@ MIT License - [http://www.opensource.org/licenses/MIT](http://www.opensource.org
 |`prepend-http`|`2.0.0`|Sindre Sorhus|[https://github.com/sindresorhus/prepend-http](https://github.com/sindresorhus/prepend-http)|
 |`private`|`0.1.8`|Ben Newman|[https://github.com/benjamn/private](https://github.com/benjamn/private)|
 |`process-nextick-args`|`1.0.7`||[https://github.com/calvinmetcalf/process-nextick-args](https://github.com/calvinmetcalf/process-nextick-args)|
-|`process-nextick-args`|`2.0.0`||[https://github.com/calvinmetcalf/process-nextick-args](https://github.com/calvinmetcalf/process-nextick-args)|
 |`process-nextick-args`|`2.0.1`||[https://github.com/calvinmetcalf/process-nextick-args](https://github.com/calvinmetcalf/process-nextick-args)|
 |`progress`|`1.1.8`|TJ Holowaychuk|[https://github.com/visionmedia/node-progress](https://github.com/visionmedia/node-progress)|
 |`promise-polyfill`|`6.1.0`|Taylor Hakes|[git+https://taylorhakes@github.com/taylorhakes/promise-polyfill](git+https://taylorhakes@github.com/taylorhakes/promise-polyfill)|
@@ -1267,7 +1257,6 @@ The Unlicense - [http://unlicense.org/](http://unlicense.org/)
 
 | Name | Version | Publisher | Repository |
 |------|---------|-----------|------------|
-|`gc-stats`|`1.4.0`||[https://github.com/dainis/node-gcstats](https://github.com/dainis/node-gcstats)|
 |`tweetnacl`|`0.14.5`|TweetNaCl-js contributors|[https://github.com/dchest/tweetnacl-js](https://github.com/dchest/tweetnacl-js)|
 
 #### WTFPL
