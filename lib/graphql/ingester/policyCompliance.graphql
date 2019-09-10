@@ -6,21 +6,21 @@ type PolicyCompliance @rootType {
   _branch: String
 
   push: Push
-  @linkTo(
-    queryName: "pushBySha"
-    variables: [
-      { name: "afterSha", path: "$._sha" }
-      { name: "branchName", path: "$._branch" }
-    ]
-  )
-  @linkFrom(
-    field: { kind: LIST, name: "compliance" }
-    query: "query compliance($sha: String!, $branch: String!) {PolicyCompliance(_sha: [$sha], _branch: [$branch], _first: 500){id}}"
-    variables: [
-      { name: "sha", path: "$.after.sha" }
-      { name: "branch", path: "$.branch" }
-    ]
-  )
+    @linkTo(
+      queryName: "pushBySha"
+      variables: [
+        { name: "afterSha", path: "$._sha" }
+        { name: "branchName", path: "$._branch" }
+      ]
+    )
+    @linkFrom(
+      field: { kind: LIST, name: "compliance" }
+      query: "query compliance($sha: String!, $branch: String!) {PolicyCompliance(_sha: [$sha], _branch: [$branch], _first: 500){id}}"
+      variables: [
+        { name: "sha", path: "$.after.sha" }
+        { name: "branch", path: "$.branch" }
+      ]
+    )
 
   ts: Int
 }
