@@ -2,8 +2,10 @@ type PolicyCompliance @rootType {
   targets: [PolicyComplianceFingerprint]
   differences: [PolicyComplianceFingerprint]
 
-  _sha: String
-  _branch: String
+  owner: String @compositeId
+
+  _sha: String @compositeId
+  _branch: String @compositeId
 
   push: Push
     @linkTo(
