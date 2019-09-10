@@ -35,4 +35,6 @@ type PolicyComplianceFingerprint {
 
   displayName: String
   displayValue: String
+
+  aspectName: String
 }
