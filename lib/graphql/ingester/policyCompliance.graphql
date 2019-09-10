@@ -1,0 +1,36 @@
+type PolicyCompliance @rootType {
+  targets: [PolicyComplianceFingerprint]
+  differences: [PolicyComplianceFingerprint]
+
+  _sha: String
+  _branch: String
+
+  push: Push
+  @linkTo(
+    queryName: "pushBySha"
+    variables: [
+      { name: "afterSha", path: "$._sha" }
+      { name: "branchName", path: "$._branch" }
+    ]
+  )
+  @linkFrom(
+    field: { kind: LIST, name: "compliance" }
+    query: "query compliance($sha: String!, $branch: String!) {PolicyCompliance(_sha: [$sha], _branch: [$branch], _first: 500){id}}"
+    variables: [
+      { name: "sha", path: "$.after.sha" }
+      { name: "branch", path: "$.branch" }
+    ]
+  )
+
+  ts: Int
+}
+
+type PolicyComplianceFingerprint {
+  type: String
+  name: String
+  sha: String
+  data: String
+
+  displayName: String
+  displayValue: String
+}
