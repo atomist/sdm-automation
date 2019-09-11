@@ -25,6 +25,7 @@ type PolicyCompliance @rootType {
     )
 
   ts: Int
+  state: PolicyCompliaceState
 }
 
 type PolicyComplianceFingerprint {
@@ -37,4 +38,10 @@ type PolicyComplianceFingerprint {
   displayValue: String
 
   aspectName: String
+}
+
+enum PolicyCompliaceState {
+  reviewed
+  in_review
+  created
 }
