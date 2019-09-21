@@ -1,0 +1,14 @@
+type PolicyTarget @rootType {
+  type: String
+  name: String
+
+  sha: String
+  data: String
+
+  displayName: String
+  displayValue: String
+
+  scope: String
+
+}
+

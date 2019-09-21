@@ -1,0 +1,22 @@
+type PolicyTargetScope @rootType {
+  name: String @compositeId
+
+  repos: PolicyTargetReposScope
+  fingerprints(type: String, name: String): [PolicyTargetFingerprintScope]
+}
+
+type PolicyTargetFingerprintScope {
+  type: String
+  name: String
+}
+
+type PolicyTargetReposScope {
+  includes: [PolicyTargetRepoScope]
+  excludes: [PolicyTargetRepoScope]
+}
+
+type PolicyTargetRepoScope {
+  owner: String
+  name: String
+  branch: String
+}
