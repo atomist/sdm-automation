@@ -1,6 +1,6 @@
 type PolicyTarget @rootType {
-  type: String
-  name: String
+  type: String @compositeId
+  name: String @compositeId
 
   sha: String
   data: String
@@ -8,7 +8,7 @@ type PolicyTarget @rootType {
   displayName: String
   displayValue: String
 
-  scope: String
+  scope: String @compositeId
 
 }
 
