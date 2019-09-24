@@ -2,13 +2,13 @@ type PolicyTarget @rootType {
   type: String @compositeId
   name: String @compositeId
 
+  stream: String @compositeId
+
   sha: String
   data: String
 
   displayName: String
   displayValue: String
-
-  scope: String @compositeId
 
 }
 
