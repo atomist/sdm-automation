@@ -2,6 +2,8 @@ type PolicyCompliance @rootType {
   targets: [PolicyComplianceFingerprint]
   differences: [PolicyComplianceFingerprint]
 
+  aspects: [PolicyComplianceAspect]
+
   owner: String @compositeId
 
   _sha: String @compositeId
@@ -26,6 +28,12 @@ type PolicyCompliance @rootType {
 
   ts: Int
   state: PolicyCompliaceState
+}
+
+type PolicyComplianceAspect {
+  type: String
+  name: String
+  displayName: String
 }
 
 type PolicyComplianceFingerprint {
