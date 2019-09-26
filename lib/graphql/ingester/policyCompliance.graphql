@@ -33,7 +33,7 @@ type PolicyCompliance @rootType {
 type PolicyComplianceAspect {
   type: String
   name: String
-  displayName: String
+  aspectName: String
 }
 
 type PolicyComplianceFingerprint {
