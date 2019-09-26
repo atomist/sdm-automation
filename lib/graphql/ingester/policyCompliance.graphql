@@ -32,7 +32,6 @@ type PolicyCompliance @rootType {
 
 type PolicyComplianceAspect {
   type: String
-  name: String
   aspectName: String
 }
 
