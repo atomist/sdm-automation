@@ -43,6 +43,7 @@ export const configuration: Configuration = {
 
         GraphQL.ingester({ path: "./lib/graphql/ingester/policyLog" }),
         GraphQL.ingester({ path: "./lib/graphql/ingester/policyCompliance" }),
+        GraphQL.ingester({ path: "./lib/graphql/ingester/policyTargetStream" }),
         GraphQL.ingester({ path: "./lib/graphql/ingester/policyTarget" }),
     ],
     postProcessors: [
