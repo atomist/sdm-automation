@@ -21,6 +21,9 @@ type ManageSubscriptionPolicyLog {
 
   reason: String
   author: String
+
+  targetSha: String
+  targetValue: String
 }
 
 enum ManageSubscriptionPolicyAction {
