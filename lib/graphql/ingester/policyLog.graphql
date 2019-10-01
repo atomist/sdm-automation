@@ -2,21 +2,47 @@ type PolicyLog @rootType {
   type: String
   name: String
 
-  manage: ManagePolicyLog
+  manage: ManageTargetPolicyLog
   apply: ApplyPolicyLog
+  subscribe: ManageSubscriptionPolicyLog
 
   ts: Int
 }
 
-type ManagePolicyLog {
-  action: ManagePolicyAction
+type ManageSubscriptionPolicyLog {
+  action: ManageSubscriptionPolicyAction
+
+  streamId: ID
+  streamName: String
+
+  org: String
+  repo: String
+  branch: String
+
+  reason: String
+  author: String
+}
+
+enum ManageSubscriptionPolicyAction {
+  subscribe
+  unsubscribe
+
+  ignore
+  unignore
+}
+
+type ManageTargetPolicyLog {
+  action: ManageTargetPolicyAction
   reason: String
   author: String
   targetSha: String
   targetValue: String
+
+  streamId: ID
+  streamName: String
 }
 
-enum ManagePolicyAction {
+enum ManageTargetPolicyAction {
   set
   unset
 }
