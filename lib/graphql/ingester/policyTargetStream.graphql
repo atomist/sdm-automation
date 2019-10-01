@@ -1,0 +1,4 @@
+type PolicyTargetStream @rootType {
+    name: String @compositeId
+}
+

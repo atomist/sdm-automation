@@ -2,7 +2,7 @@ type PolicyTarget @rootType {
   type: String @compositeId
   name: String @compositeId
 
-  stream: String @compositeId
+  streams: [ID]
 
   sha: String
   data: String
