@@ -15,7 +15,7 @@ type ManageSubscriptionPolicyLog {
   streamId: ID
   streamName: String
 
-  org: String
+  owner: String
   repo: String
   branch: String
 
