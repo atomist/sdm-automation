@@ -4,7 +4,7 @@ type PolicyLog @rootType {
 
   manage: ManageTargetPolicyLog
   apply: ApplyPolicyLog
-  subscribe(org: String, repo: String branch: String): ManageSubscriptionPolicyLog
+  subscribe(owner: String, repo: String branch: String): ManageSubscriptionPolicyLog
 
   ts: Int
 }
