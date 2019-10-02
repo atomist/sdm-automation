@@ -32,7 +32,7 @@ type PolicyCompliance @rootType {
 
 type PolicyComplianceAspect {
   type: String
-  aspectName: String
+  displayType: String
 }
 
 type PolicyComplianceFingerprint {
@@ -43,8 +43,7 @@ type PolicyComplianceFingerprint {
 
   displayName: String
   displayValue: String
-
-  aspectName: String
+  displayType: String
 }
 
 enum PolicyCompliaceState {
