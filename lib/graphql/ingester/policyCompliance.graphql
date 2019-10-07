@@ -8,6 +8,8 @@ type PolicyCompliance @rootType {
 
   _sha: String @compositeId
   _branch: String @compositeId
+  _owner: String
+  _repo: String
 
   push: Push
     @linkTo(
