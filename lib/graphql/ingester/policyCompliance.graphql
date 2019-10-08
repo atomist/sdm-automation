@@ -35,6 +35,8 @@ type PolicyCompliance @rootType {
 type PolicyComplianceAspect {
   type: String
   displayType: String
+
+  mangeable: Boolean
 }
 
 type PolicyComplianceFingerprint {
