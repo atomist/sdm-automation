@@ -36,7 +36,7 @@ type PolicyComplianceAspect {
   type: String
   displayType: String
 
-  mangeable: Boolean
+  manageable: Boolean
 }
 
 type PolicyComplianceFingerprint {
