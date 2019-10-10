@@ -122,4 +122,5 @@ type SdmGoalDescriptions {
   waitingForPreApproval: String
   canceled: String
   stopped: String
+  skipped: String
 }
