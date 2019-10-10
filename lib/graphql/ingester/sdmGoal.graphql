@@ -40,6 +40,12 @@ type SdmGoal @rootType {
 
   signature: String
 
+  # JSON serialized parameters
+  parameters: String
+
+  # Persisted descriptions for this goal as it moves through the phases
+  descriptions: SdmGoalDescriptions
+
   push: Push
     @linkTo(
       queryName: "pushBySha"
@@ -104,4 +110,16 @@ enum SdmGoalState {
   canceled
   stopped
   skipped
+}
+
+type SdmGoalDescriptions {
+  planned: String
+  requested: String
+  completed: String
+  inProcess: String
+  failed: String
+  waitingForApproval: String
+  waitingForPreApproval: String
+  canceled: String
+  stopped: String
 }
