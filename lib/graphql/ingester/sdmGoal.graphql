@@ -56,10 +56,12 @@ type SdmGoal @rootType {
     )
     @linkFrom(
       field: { kind: LIST, name: "goals" }
-      query: "query goals($sha: String!, $branch: String!) {SdmGoal(sha: [$sha], branch: [$branch], _first: 500){id}}"
+      query: "query goals($sha: String!, $branch: String!, $owner: String!, $repo: String!) { SdmGoal(sha: [$sha], branch: [$branch], _first: 500) { id repo (name: [$repo], owner: [$owner]) @required { name } } }"
       variables: [
         { name: "sha", path: "$.after.sha" }
         { name: "branch", path: "$.branch" }
+        { name: "owner", path: "$.repo.owner" }
+        { name: "repo", path: "$.repo.name" }
       ]
     )
 }
