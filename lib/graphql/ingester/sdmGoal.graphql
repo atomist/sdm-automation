@@ -52,6 +52,8 @@ type SdmGoal @rootType {
       variables: [
         { name: "afterSha", path: "$.sha" }
         { name: "branchName", path: "$.branch" }
+        { name: "ownerName", path: "$.repo.owner" }
+        { name: "repoName", path: "$.repo.name" }
       ]
     )
     @linkFrom(
