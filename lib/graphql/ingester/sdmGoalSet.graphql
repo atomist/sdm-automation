@@ -22,14 +22,18 @@ type SdmGoalSet @rootType {
       variables: [
         { name: "afterSha", path: "$.sha" }
         { name: "branchName", path: "$.branch" }
+        { name: "ownerName", path: "$.repo.owner" }
+        { name: "repoName", path: "$.repo.name" }
       ]
     )
     @linkFrom(
       field: { kind: LIST, name: "goalSets" }
-      query: "query goalSets($sha: String!, $branch: String!) {SdmGoalSet(sha: [$sha], branch: [$branch], _first: 500){id}}"
+      query: "query goals($sha: String!, $branch: String!, $owner: String!, $repo: String!) { SdmGoal(sha: [$sha], branch: [$branch], _first: 500) { id repo (name: [$repo], owner: [$owner]) @required { name } } }"
       variables: [
         { name: "sha", path: "$.after.sha" }
         { name: "branch", path: "$.branch" }
+        { name: "owner", path: "$.repo.owner" }
+        { name: "repo", path: "$.repo.name" }
       ]
     )
 }
