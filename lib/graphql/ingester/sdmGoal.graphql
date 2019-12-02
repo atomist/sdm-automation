@@ -82,6 +82,7 @@ type SdmRepository {
 type SdmGoalFulfillment {
   method: String
   name: String
+  registration: String
 }
 
 type SdmProvenance {
