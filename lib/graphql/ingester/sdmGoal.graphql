@@ -8,7 +8,7 @@ type SdmGoal @rootType {
 
   repo(name: [String], owner: [String], providerId: [String]): SdmRepository
 
-  fulfillment(name: [String], method: [String]): SdmGoalFulfillment
+  fulfillment(name: [String], method: [String], registration: [String]): SdmGoalFulfillment
 
   description: String
   url: String
