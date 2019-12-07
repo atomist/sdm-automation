@@ -16,6 +16,7 @@ type SdmGoal @rootType {
   externalUrls: [SdmExternalUrl]
   goalSet: String
   goalSetId: String @compositeId
+  registration: String
   state: SdmGoalState @compositeId
   phase: String @compositeId
   ts: Int
