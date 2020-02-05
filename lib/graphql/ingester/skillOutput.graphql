@@ -1,0 +1,32 @@
+type SkillOutput @rootType {
+  _sha: String
+  _branch: String
+  _repo: String
+  _owner: String
+
+  type: String
+
+  uri: String
+  content: String
+
+  push: Push
+    @linkTo(
+      queryName: "pushBySha"
+      variables: [
+        { name: "afterSha", path: "$._sha" }
+        { name: "branchName", path: "$._branch" }
+        { name: "ownerName", path: "$._owner" }
+        { name: "repoName", path: "$._repo" }
+      ]
+    )
+    @linkFrom(
+      field: { kind: LIST, name: "outputs" }
+      query: "query outputs($sha: String!, $branch: String!, $owner: String!, $repo: String!) { SkillOutput(_repo: [$repo], _owner: [$owner], _sha: [$sha], _branch: [$branch], _first: 500) { id } }"
+      variables: [
+        { name: "sha", path: "$.after.sha" }
+        { name: "branch", path: "$.branch" }
+        { name: "owner", path: "$.repo.owner" }
+        { name: "repo", path: "$.repo.name" }
+      ]
+    )
+}
