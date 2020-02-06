@@ -7,6 +7,8 @@ type SkillOutput @rootType {
   classifier: String
   type: String
 
+  correlationId: String
+
   uri: String
   content: String
 
