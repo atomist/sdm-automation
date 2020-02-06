@@ -4,7 +4,7 @@ type SkillOutput @rootType {
   _repo: String
   _owner: String
 
-  classifier: String
+  classifier: String @compositeId
   type: String
 
   correlationId: String
