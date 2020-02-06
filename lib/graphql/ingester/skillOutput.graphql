@@ -4,10 +4,13 @@ type SkillOutput @rootType {
   _repo: String
   _owner: String
 
+  classifier: String
   type: String
 
   uri: String
   content: String
+
+  skill: SkillOutputSkill
 
   push: Push
     @linkTo(
@@ -29,4 +32,11 @@ type SkillOutput @rootType {
         { name: "repo", path: "$.repo.name" }
       ]
     )
+}
+
+type SkillOutputSkill {
+
+  name: String
+  version: String
+
 }
