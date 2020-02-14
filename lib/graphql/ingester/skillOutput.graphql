@@ -5,8 +5,8 @@ type SkillOutput @rootType {
   _owner: String
 
   # The following two fields are needed to get SkillOutput repo filtered
-  ownerId: String
-  repoId: String
+  orgParentId: String
+  repoParentId: String
 
   classifier: String @compositeId
   type: String
@@ -14,7 +14,7 @@ type SkillOutput @rootType {
   correlationId: String
 
   uri: String
-  content: String
+  # content: String
 
   skill: SkillOutputSkill
 
