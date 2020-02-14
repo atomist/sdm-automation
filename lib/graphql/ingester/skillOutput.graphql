@@ -4,6 +4,10 @@ type SkillOutput @rootType {
   _repo: String
   _owner: String
 
+  # The following two fields are needed to get SkillOutput repo filtered
+  ownerId: String
+  repoId: String
+
   classifier: String @compositeId
   type: String
 
