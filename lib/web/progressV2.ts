@@ -57,6 +57,7 @@ function progressRequestHandler(config: Configuration): exp.RequestHandler {
         const current = req.params.current;
         const total = req.params.total;
         const format = req.query.format || "full";
+        let color = req.query.color ? `#${req.query.color.replace(/#/g, "")}` : undefined;
 
         const canvas = Canvas.createCanvas(75, 75);
         const ctx = canvas.getContext("2d");
@@ -66,50 +67,49 @@ function progressRequestHandler(config: Configuration): exp.RequestHandler {
         ctx.imageSmoothingEnabled = true;
         ctx.imageSmoothingQuality = "high";
 
-        let color;
         let image;
         let label;
         switch (state) {
             case "canceled":
-                color = "#B5B5B5";
+                color = color || "#B5B5B5";
                 label = "Canceled";
                 image = Images.canceled;
                 break;
             case "stopped":
-                color = "#D7B958";
+                color = color || "#D7B958";
                 label = "Stopped";
                 image = Images.stopped;
                 break;
             case "in_process":
-                color = "#2A7D7D";
+                color = color || "#2A7D7D";
                 label = "Running";
                 image = Images.inProcess;
                 break;
             case "requested":
             case "planned":
-                color = "#D7B958";
+                color = color || "#D7B958";
                 label = "Planning";
                 image = Images.requested;
                 break;
             case "failure":
-                color = "#BC3D33";
+                color = color || "#BC3D33";
                 label = "Failed";
                 image = Images.failed;
                 break;
             case "waiting_for_approval":
             case "approved":
-                color = "#D7B958";
+                color = color || "#D7B958";
                 label = "Waiting";
                 image = Images.approval;
                 break;
             case "waiting_for_pre_approval":
             case "pre_approved":
-                color = "#D7B958";
+                color = color || "#D7B958";
                 label = "Waiting";
                 image = Images.preApproval;
                 break;
             default:
-                color = "#37A745";
+                color = color || "#37A745";
                 label = "Completed";
                 image = Images.success;
                 break;
