@@ -7,13 +7,7 @@
         "jsx": "React",
         "declaration": true,
         "sourceMap": true,
-        "lib": [
-            "DOM",
-            "ES2017",
-            "DOM.Iterable",
-            "ScriptHost",
-            "esnext.asynciterable"
-        ],
+        "lib": ["DOM"],
         "strict": false,
         "strictNullChecks": false,
         "forceConsistentCasingInFileNames": true,
