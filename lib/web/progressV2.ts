@@ -57,6 +57,7 @@ function progressRequestHandler(config: Configuration): exp.RequestHandler {
         const current = req.params.current;
         const total = req.params.total;
         const format = req.query.format || "full";
+        const renderImage = req.query.image || true;
         let color = req.query.color ? `#${req.query.color.replace(/#/g, "")}` : undefined;
 
         const canvas = Canvas.createCanvas(75, 75);
@@ -114,8 +115,9 @@ function progressRequestHandler(config: Configuration): exp.RequestHandler {
                 image = Images.success;
                 break;
         }
-
-        ctx.drawImage(image, Math.round((75 - 20) / 2), 10, 20, 20);
+        if (renderImage) {
+            ctx.drawImage(image, Math.round((75 - 20) / 2), 10, 20, 20);
+        }
 
         ctx.strokeStyle = "#cccccc";
         ctx.beginPath();
