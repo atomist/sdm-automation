@@ -56,7 +56,8 @@ function progressRequestHandler(config: Configuration): exp.RequestHandler {
         const state = req.params.state;
         const current = req.params.current;
         const total = req.params.total;
-        const format = req.query.format || "full";
+        const format = req.query.format || req.query.status || "full";
+        const counter = req.query.counter || "full";
         const renderImage = req.query.image || true;
         let color = req.query.color ? `#${req.query.color.replace(/#/g, "")}` : undefined;
 
@@ -141,17 +142,19 @@ function progressRequestHandler(config: Configuration): exp.RequestHandler {
         ctx.arc(38, 30, 28, start * Math.PI, angle * Math.PI);
         ctx.stroke();
 
-        const tick = `${current}/${total}`;
-        ctx.fillStyle = "#767676";
-        ctx.font = `10px "Lato" bold`;
-        let text = ctx.measureText(tick);
-        let w = text.width;
-        ctx.fillText(tick, Math.round((75 - w) / 2), 45);
+        if (counter === "full") {
+            const tick = `${current}/${total}`;
+            ctx.fillStyle = "#767676";
+            ctx.font = `10px "Lato" bold`;
+            const text = ctx.measureText(tick);
+            const w = text.width;
+            ctx.fillText(tick, Math.round((75 - w) / 2), 45);
+        }
 
         if (format === "full") {
             ctx.font = `10px "Lato"`;
-            text = ctx.measureText(label);
-            w = text.width;
+            const text = ctx.measureText(label);
+            const w = text.width;
             ctx.fillText(label, Math.round((75 - w) / 2), 71);
         }
 
