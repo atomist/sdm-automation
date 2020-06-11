@@ -56,9 +56,9 @@ function progressRequestHandler(config: Configuration): exp.RequestHandler {
         const state = req.params.state;
         const current = req.params.current;
         const total = req.params.total;
-        const format = req.query.format || req.query.status || "full";
-        const counter = req.query.counter || "full";
-        const renderImage = req.query.image || true;
+        const format = req.query.format || req.query.status || "true";
+        const counter = req.query.counter || "true";
+        const renderImage = req.query.image || "true";
         let color = req.query.color ? `#${req.query.color.replace(/#/g, "")}` : undefined;
 
         const canvas = Canvas.createCanvas(75, 75);
@@ -116,7 +116,7 @@ function progressRequestHandler(config: Configuration): exp.RequestHandler {
                 image = Images.success;
                 break;
         }
-        if (renderImage) {
+        if (renderImage === "true") {
             ctx.drawImage(image, Math.round((75 - 20) / 2), 10, 20, 20);
         }
 
@@ -142,7 +142,7 @@ function progressRequestHandler(config: Configuration): exp.RequestHandler {
         ctx.arc(38, 30, 28, start * Math.PI, angle * Math.PI);
         ctx.stroke();
 
-        if (counter === "full") {
+        if (counter === "true") {
             const tick = `${current}/${total}`;
             ctx.fillStyle = "#767676";
             ctx.font = `10px "Lato" bold`;
@@ -151,7 +151,7 @@ function progressRequestHandler(config: Configuration): exp.RequestHandler {
             ctx.fillText(tick, Math.round((75 - w) / 2), 45);
         }
 
-        if (format === "full") {
+        if (format === "true") {
             ctx.font = `10px "Lato"`;
             const text = ctx.measureText(label);
             const w = text.width;
