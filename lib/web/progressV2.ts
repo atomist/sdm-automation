@@ -152,6 +152,7 @@ function progressRequestHandler(config: Configuration): exp.RequestHandler {
         }
 
         if (format === "true") {
+            ctx.fillStyle = "#767676";
             ctx.font = `10px "Lato"`;
             const text = ctx.measureText(label);
             const w = text.width;
