@@ -1254,7 +1254,7 @@ MIT License - [https://opensource.org/licenses/MIT](https://opensource.org/licen
 |`tinycolor`|`0.0.1`|Einar Otto Stangvik|[https://github.com/einaros/tinycolor](https://github.com/einaros/tinycolor)|
 
 #### Unlicense
-The Unlicense - [http://unlicense.org/](http://unlicense.org/)
+The Unlicense - [https://unlicense.org/](https://unlicense.org/)
 
 | Name | Version | Publisher | Repository |
 |------|---------|-----------|------------|
