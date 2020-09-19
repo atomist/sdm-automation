@@ -54,4 +54,5 @@ export const configuration: Configuration = {
         configureProgressBarRouteV2,
         configureBadgeRoute,
     ],
+
 };
