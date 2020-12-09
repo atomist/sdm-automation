@@ -45,9 +45,9 @@ export const configuration: Configuration = {
         GraphQL.ingester({ path: "./lib/graphql/ingester/policyCompliance" }),
         GraphQL.ingester({ path: "./lib/graphql/ingester/policyTargetStream" }),
         GraphQL.ingester({ path: "./lib/graphql/ingester/policyTarget" }),
-        GraphQL.ingester({ path: "./lib/graphql/ingester/skillOutput" }),
 
-        GraphQL.ingester({ path: "./lib/graphql/ingester/webhook" }),
+        GraphQL.ingester({ path: "./lib/graphql/ingester/lifecycleAttachment.graphql" }),
+
     ],
     postProcessors: [
         configureProgressBarRoute,

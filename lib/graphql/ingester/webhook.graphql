@@ -1,6 +1,0 @@
-type WebhookEvent @rootType {
-  event: String!
-  data: String!
-  ts: Int!
-}
-

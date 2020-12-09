@@ -1,0 +1,12 @@
+type LifecycleAttachment @rootType {
+    type: LifecycleAttachmentType @compositeId
+    identifier: String @compositeId
+    skill: String @compositeId
+
+    body: String
+    actions: String
+}
+
+enum LifecycleAttachmentType {
+    push
+}
