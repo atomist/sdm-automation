@@ -27,7 +27,7 @@ You will need to have [Node.js][node] installed.  To verify that the
 right versions are installed, please run:
 
 ```
-$ node -v
+$ node -v 
 v8.4.0
 $ npm -v
 5.4.1
