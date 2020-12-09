@@ -1,7 +1,9 @@
 type LifecycleAttachment @rootType {
     type: LifecycleAttachmentType @compositeId
     identifier: String @compositeId
+
     skill: String @compositeId
+    name: String @compositeId
 
     body: String
     actions: String
