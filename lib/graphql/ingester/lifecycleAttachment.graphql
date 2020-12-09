@@ -5,8 +5,9 @@ type LifecycleAttachment @rootType {
     skill: String @compositeId
     name: String @compositeId
 
+    contentType: String
     body: String
-    actions: String
+    ts: Int
 }
 
 enum LifecycleAttachmentType {
