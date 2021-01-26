@@ -13,4 +13,5 @@ type LifecycleAttachment @rootType {
 
 enum LifecycleAttachmentType {
     push
+    commit
 }
