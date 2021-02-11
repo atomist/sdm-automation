@@ -22,7 +22,7 @@
     "sdm"
   ],
   "dependencies": {
-    "@atomist/automation-client": "^1.7.0",
+    "@atomist/automation-client": "^2.1.0",
     "@atomist/slack-messages": "^1.1.1",
     "body-parser": "^1.19.0",
     "canvas": "^2.5.0",
